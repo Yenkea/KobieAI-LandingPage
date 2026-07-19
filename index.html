@@ -3,207 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="KobieAI — Build Smarter with AI. AI automation, smart chatbots, and data analytics for your business.">
-<meta name="theme-color" content="#080812">
+<meta name="description" content="KobieAI — Build Smarter with AI. AI automation, smart chatbots, and data analytics.">
+<meta name="theme-color" content="#000000">
 <title>KobieAI — AI Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background-color:#080812;color:#f0f0f0;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-:root{--bg-primary:#080812;--bg-secondary:#0c0c1a;--bg-card:rgba(255,255,255,0.03);--bg-glass:rgba(255,255,255,0.04);--text-primary:#f0f0f0;--text-secondary:#a0a0b0;--text-muted:#6a6a7a;--accent:#3B82F6;--accent-secondary:#8B5CF6;--accent-glow:rgba(59,130,246,0.25);--accent-pink:#EC4899;--gray-light:#ccccd0;--gray-mid:#888898;--gradient:linear-gradient(135deg,#3B82F6,#8B5CF6);--gradient-hover:linear-gradient(135deg,#5694f7,#9d71f8);--gradient-warm:linear-gradient(135deg,#3B82F6,#EC4899);--max-width:1200px;--nav-height:72px;--border-radius:16px;--border-radius-sm:10px;--transition:0.3s cubic-bezier(0.4,0,0.2,1);--transition-slow:0.5s cubic-bezier(0.4,0,0.2,1)}
-.container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 24px}
-.accent{color:var(--accent)}
+body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+:root{--bg:#000;--bg2:#070707;--bg3:#0f0f0f;--bg-card:rgba(255,255,255,0.02);--text:#fff;--text2:#aaa;--text3:#666;--accent:#fff;--accent-dim:rgba(255,255,255,0.1);--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.15);--gradient:linear-gradient(135deg,#fff,#888);--max-w:1200px;--nav-h:72px;--r:16px;--rs:10px;--t:.4s cubic-bezier(.4,0,.2,1);--ts:.6s cubic-bezier(.4,0,.2,1)}
+.container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 24px}
 .gradient-text{background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.glass{background:var(--bg-glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:var(--border-radius)}
-.glass-accent{border-color:rgba(59,130,246,0.12)}
-.success-banner{position:fixed;top:24px;left:50%;transform:translateX(-50%);z-index:9999;padding:16px 32px;background:var(--gradient);color:#fff;font-weight:600;font-size:1rem;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.4);animation:slideDownBanner .4s ease-out}
-.success-banner.fade-out{opacity:0;transform:translateX(-50%) translateY(-20px);transition:opacity .4s ease,transform .4s ease}
-@keyframes slideDownBanner{from{opacity:0;transform:translateX(-50%) translateY(-30px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
-::-webkit-scrollbar{width:8px}
-::-webkit-scrollbar-track{background:var(--bg-primary)}
-::-webkit-scrollbar-thumb{background:rgba(59,130,246,0.3);border-radius:4px}
-::-webkit-scrollbar-thumb:hover{background:rgba(59,130,246,0.5)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:50px;font-family:inherit;font-size:.95rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:var(--transition);white-space:nowrap}
-.btn--primary{background:var(--gradient);color:#fff;box-shadow:0 4px 24px var(--accent-glow)}
-.btn--primary:hover{background:var(--gradient-hover);box-shadow:0 6px 32px rgba(59,130,246,0.35);transform:translateY(-2px)}
-.btn--outline{background:transparent;color:var(--text-primary);border:1px solid rgba(255,255,255,0.15)}
-.btn--outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px var(--accent-glow)}
-.btn--lg{padding:16px 36px;font-size:1.05rem}
-.btn--full{width:100%}
-.section{padding:100px 0}
+.section{padding:120px 0;position:relative}
 .section__header{text-align:center;max-width:640px;margin:0 auto 64px}
-.section__tag{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:600;color:var(--accent);background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
-.section__title{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.2;margin-bottom:16px}
-.section__desc{color:var(--text-secondary);font-size:1.1rem;line-height:1.7}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;opacity:0.4;animation:orbFloat 8s ease-in-out infinite alternate}
-.orb--blue{width:400px;height:400px;background:rgba(59,130,246,0.15);top:-100px;right:-100px}
-.orb--purple{width:350px;height:350px;background:rgba(139,92,246,0.12);bottom:-80px;left:-80px;animation-delay:-3s}
-@keyframes orbFloat{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,-30px) scale(1.15)}}
-.grid-lines{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;background-image:linear-gradient(rgba(59,130,246,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.03) 1px,transparent 1px);background-size:60px 60px}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-height);transition:var(--transition);background:transparent}
-.nav.scrolled{background:rgba(8,8,18,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(59,130,246,0.08)}
+.section__tag{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.75rem;font-weight:600;color:var(--text2);background:rgba(255,255,255,.03);border:1px solid var(--border);margin-bottom:16px;text-transform:uppercase;letter-spacing:1.5px}
+.section__title{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px;letter-spacing:-.5px}
+.section__desc{color:var(--text2);font-size:1.05rem;line-height:1.7}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 32px;border-radius:50px;font-family:inherit;font-size:.9rem;font-weight:600;text-decoration:none;cursor:none;border:1px solid var(--border);transition:var(--t);white-space:nowrap;position:relative;overflow:hidden;background:transparent;color:var(--text);letter-spacing:.3px}
+.btn::before{content:'';position:absolute;inset:0;background:var(--accent);opacity:0;transition:var(--t)}
+.btn:hover::before{opacity:.1}
+.btn:hover{border-color:var(--text);transform:translateY(-2px);box-shadow:0 8px 40px rgba(255,255,255,.08)}
+.btn--primary{background:var(--accent);color:#000;border-color:var(--accent)}
+.btn--primary::before{display:none}
+.btn--primary:hover{background:var(--text);box-shadow:0 8px 40px rgba(255,255,255,.15)}
+.btn--lg{padding:16px 40px;font-size:1rem}
+.btn--full{width:100%}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#000}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
+
+/* ===== SCROLL PROGRESS ===== */
+.scroll-progress{position:fixed;top:0;left:0;width:0;height:2px;background:var(--gradient);z-index:9999;transition:width .1s linear}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor{position:fixed;width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.4);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s,border-color .3s;mix-blend-mode:difference}
+.cursor.hover{width:48px;height:48px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+.cursor-dot{position:fixed;width:4px;height:4px;border-radius:50%;background:#fff;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s}
+
+/* ===== 3D ICOSAHEDRON CANVAS ===== */
+#icosahedron{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;display:block;opacity:.7}
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+
+/* ===== MOUSE GLOW ===== */
+.mouse-glow{position:fixed;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.03) 0%,transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);will-change:left,top}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);transition:var(--t);background:transparent}
+.nav.scrolled{background:rgba(0,0,0,.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;height:100%}
-.nav__logo{font-size:1.5rem;font-weight:800;color:var(--text-primary);text-decoration:none;letter-spacing:-.5px}
-.nav__links{display:flex;align-items:center;gap:32px}
-.nav__link{color:var(--text-secondary);text-decoration:none;font-size:.9rem;font-weight:500;transition:var(--transition);position:relative}
-.nav__link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gradient);transition:var(--transition);border-radius:2px}
-.nav__link:hover{color:var(--text-primary)}
-.nav__link--active{color:var(--text-primary)}
+.nav__logo{font-size:1.4rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.5px;position:relative;z-index:2}
+.nav__logo span{font-weight:300}
+.nav__links{display:flex;align-items:center;gap:28px}
+.nav__link{color:var(--text2);text-decoration:none;font-size:.85rem;font-weight:500;transition:var(--t);position:relative;letter-spacing:.3px}
+.nav__link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:var(--t)}
+.nav__link:hover{color:var(--text)}
+.nav__link--active{color:var(--text)}
 .nav__link--active::after,.nav__link:hover::after{width:100%}
 .nav__cta{display:none}
-.nav__hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav__hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);border-radius:2px;transition:var(--transition)}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:var(--nav-height) 0 60px}
-.hero__bg{position:absolute;inset:0;z-index:0}
-.hero__inner{position:relative;z-index:1;text-align:center;max-width:820px}
-.hero__title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:24px;animation:fadeInUp .8s ease-out}
-.hero__sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);line-height:1.7;max-width:600px;margin:0 auto 40px;animation:fadeInUp .8s .15s ease-out both}
-.hero__ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeInUp .8s .3s ease-out both}
-.hero__stats{display:flex;justify-content:center;gap:48px;margin-top:80px;animation:fadeInUp .8s .45s ease-out both}
-.stat{display:flex;flex-direction:column;align-items:center}
-.stat__number{font-size:2.5rem;font-weight:800;color:var(--text-primary);line-height:1}
-.stat__suffix{font-size:1.5rem;font-weight:800;color:var(--gray-mid)}
-.stat__label{font-size:.85rem;color:var(--text-muted);margin-top:4px}
-.stat__icon{font-size:1.2rem;opacity:0.5;margin-bottom:4px}
+.nav__hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;position:relative;z-index:2}
+.nav__hamburger span{display:block;width:24px;height:1.5px;background:var(--text);border-radius:2px;transition:var(--t)}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:var(--nav-h) 0 60px;z-index:1}
+.hero__inner{position:relative;z-index:2;text-align:center;max-width:860px}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:50px;font-size:.8rem;font-weight:500;color:var(--text2);background:rgba(255,255,255,.03);border:1px solid var(--border);margin-bottom:32px;letter-spacing:.5px;animation:fadeInUp .8s ease-out}
+.hero__badge span{width:6px;height:6px;border-radius:50%;background:var(--text);animation:pulse 2s infinite}
+.hero__title{font-size:clamp(2.8rem,7vw,5rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:28px}
+.hero__title-line{display:block;overflow:hidden}
+.hero__title-line span{display:block;animation:revealText .8s .2s ease-out both}
+.hero__title-line:nth-child(2) span{animation-delay:.35s}
+.hero__sub{font-size:clamp(1rem,1.8vw,1.15rem);color:var(--text2);line-height:1.7;max-width:600px;margin:0 auto 40px;animation:fadeInUp .8s .25s ease-out both}
+.hero__ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeInUp .8s .4s ease-out both}
+.hero__stats{display:flex;justify-content:center;gap:56px;margin-top:80px;animation:fadeInUp .8s .55s ease-out both}
+.stat{display:flex;flex-direction:column;align-items:center;gap:4px}
+.stat__number{font-size:2.4rem;font-weight:800;line-height:1}
+.stat__suffix{font-size:1.4rem;font-weight:300;color:var(--text3)}
+.stat__label{font-size:.8rem;color:var(--text3);font-weight:500;letter-spacing:.5px;text-transform:uppercase}
+.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;pointer-events:none;z-index:1;opacity:.3}
+.hero-glow--2{background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 70%);bottom:-200px;left:-200px;animation:orbFloat 12s ease-in-out infinite alternate-reverse}
+.hero-lines{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;background-image:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);background-size:64px 64px}
+@keyframes orbFloat{0%{transform:translate(0,0) scale(1)}100%{transform:translate(40px,-40px) scale(1.1)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.services{background:var(--bg-secondary)}
-.services__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.service-card{padding:40px 32px;transition:var(--transition-slow);cursor:default;position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:0;transition:var(--transition)}
-.service-card:hover{transform:translateY(-8px);border-color:rgba(59,130,246,0.2);box-shadow:0 20px 60px var(--accent-glow)}
+@keyframes revealText{from{opacity:0;transform:translateY(100%)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== SECTION DIVIDER ===== */
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);margin:0 auto;max-width:400px}
+
+/* ===== SERVICES ===== */
+.services{background:var(--bg2)}
+.services__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;perspective:1200px}
+.service-card{padding:44px 36px;transition:transform .2s;cursor:default;position:relative;overflow:hidden;border-radius:var(--r);background:var(--bg-card);border:1px solid var(--border);transform-style:preserve-3d;will-change:transform}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient);opacity:0;transition:var(--t)}
+.service-card:hover{transform:scale(1.02);border-color:var(--border-hover);box-shadow:0 24px 80px rgba(0,0,0,.5)}
 .service-card:hover::before{opacity:1}
-.service-card__icon{width:56px;height:56px;margin-bottom:20px}
-.service-card__title{font-size:1.3rem;font-weight:700;margin-bottom:12px}
-.service-card__desc{color:var(--text-secondary);font-size:.95rem;line-height:1.7;margin-bottom:20px}
+.service-card__icon{width:48px;height:48px;margin-bottom:24px;opacity:.5}
+.service-card__title{font-size:1.2rem;font-weight:700;margin-bottom:14px;letter-spacing:-.3px}
+.service-card__desc{color:var(--text2);font-size:.9rem;line-height:1.7;margin-bottom:20px}
 .service-card__features{list-style:none}
-.service-card__features li{position:relative;padding-left:20px;color:var(--text-muted);font-size:.9rem;margin-bottom:8px}
-.service-card__features li::before{content:'\2192';position:absolute;left:0;color:var(--accent)}
-.about__content{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.about__text p{color:var(--text-secondary);font-size:1.05rem;line-height:1.8;margin-bottom:20px}
-.about__highlight{font-size:1.15rem!important;font-weight:600;color:var(--text-primary)!important}
+.service-card__features li{position:relative;padding-left:18px;color:var(--text3);font-size:.85rem;margin-bottom:8px;transition:var(--t)}
+.service-card__features li::before{content:'\2192';position:absolute;left:0;color:var(--text2)}
+
+/* ===== ABOUT ===== */
+.about{background:var(--bg)}
+.about__content{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;perspective:1200px}
+.about__text p{color:var(--text2);font-size:1rem;line-height:1.8;margin-bottom:20px}
+.about__highlight{font-size:1.1rem!important;font-weight:600;color:var(--text)!important}
 .about__stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.about-stat{padding:28px 20px;text-align:center;transition:var(--transition)}
-.about-stat:hover{transform:translateY(-4px);border-color:rgba(59,130,246,0.12);box-shadow:0 8px 30px var(--accent-glow)}
-.about-stat__number{font-size:2.2rem;font-weight:800;display:block;margin-bottom:6px}
-.about-stat__label{font-size:.9rem;color:var(--text-muted)}
-.portfolio{background:var(--bg-secondary)}
-.portfolio__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.portfolio-card{overflow:hidden;transition:var(--transition-slow);position:relative}
-.portfolio-card:hover{transform:translateY(-8px);border-color:rgba(59,130,246,0.2);box-shadow:0 20px 60px var(--accent-glow)}
-.portfolio-card__image{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.portfolio-card__image--norditech{background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(139,92,246,0.05))}
-.portfolio-card__image--greenleaf{background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(59,130,246,0.05))}
-.portfolio-card__image--medicore{background:linear-gradient(135deg,rgba(236,72,153,0.1),rgba(59,130,246,0.05))}
-.portfolio-card__image--aerologis{background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(59,130,246,0.05))}
-.portfolio-card__logo{width:60px;height:60px;transition:var(--transition)}
-.portfolio-card:hover .portfolio-card__logo{transform:scale(1.12)}
+.about-stat{padding:32px 24px;text-align:center;transition:transform .2s;border-radius:var(--r);background:var(--bg-card);border:1px solid var(--border);transform-style:preserve-3d;will-change:transform}
+.about-stat:hover{transform:scale(1.03);border-color:var(--border-hover);box-shadow:0 12px 48px rgba(0,0,0,.4)}
+.about-stat__number{font-size:2rem;font-weight:800;display:block;margin-bottom:6px}
+.about-stat__label{font-size:.85rem;color:var(--text3);font-weight:500}
+
+/* ===== PORTFOLIO ===== */
+.portfolio{background:var(--bg2)}
+.portfolio__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;perspective:1200px}
+.portfolio-card{overflow:hidden;transition:transform .2s;position:relative;border-radius:var(--r);background:var(--bg-card);border:1px solid var(--border);transform-style:preserve-3d;will-change:transform}
+.portfolio-card:hover{transform:scale(1.03);border-color:var(--border-hover);box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.portfolio-card__image{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:rgba(255,255,255,.02)}
+.portfolio-card__image::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.6))}
+.portfolio-card__logo{width:50px;height:50px;transition:var(--t);opacity:.4;filter:brightness(0) invert(1)}
+.portfolio-card:hover .portfolio-card__logo{transform:scale(1.15);opacity:.7}
 .portfolio-card__body{padding:24px}
-.portfolio-card__title{font-size:1.1rem;font-weight:700;margin-bottom:8px}
-.portfolio-card__desc{font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px}
+.portfolio-card__title{font-size:1rem;font-weight:700;margin-bottom:8px}
+.portfolio-card__desc{font-size:.85rem;color:var(--text2);line-height:1.6;margin-bottom:16px}
 .portfolio-card__tags{display:flex;flex-wrap:wrap;gap:6px}
-.portfolio-card__tags span{padding:3px 10px;border-radius:50px;font-size:.75rem;font-weight:500;background:rgba(59,130,246,0.06);color:var(--text-secondary);border:1px solid rgba(59,130,246,0.12)}
-.casestudies{background:var(--bg-primary);position:relative}
-.cs-card{display:grid;grid-template-columns:auto 1fr;gap:32px;padding:36px;margin-bottom:24px;transition:var(--transition-slow);position:relative;z-index:1}
-.cs-card:hover{border-color:rgba(59,130,246,0.12);box-shadow:0 20px 60px var(--accent-glow)}
-.cs-card__logo{flex-shrink:0;width:72px;height:72px}
-.cs-card__logo svg{width:72px;height:72px}
+.portfolio-card__tags span{padding:3px 10px;border-radius:50px;font-size:.7rem;font-weight:500;background:rgba(255,255,255,.03);color:var(--text3);border:1px solid var(--border)}
+
+/* ===== CASE STUDIES ===== */
+.casestudies{background:var(--bg);position:relative}
+.cs-card{display:grid;grid-template-columns:auto 1fr;gap:32px;padding:40px;margin-bottom:24px;transition:transform .2s;position:relative;z-index:1;border-radius:var(--r);background:var(--bg-card);border:1px solid var(--border);transform-style:preserve-3d;will-change:transform}
+.cs-card:hover{border-color:var(--border-hover);box-shadow:0 24px 80px rgba(0,0,0,.5);transform:scale(1.012)}
+.cs-card__logo{flex-shrink:0;width:64px;height:64px;opacity:.3}
+.cs-card__logo svg{width:64px;height:64px}
 .cs-card__content{min-width:0}
 .cs-card__header{margin-bottom:20px}
-.cs-card__title{font-size:1.3rem;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.cs-card__industry{font-size:.75rem;font-weight:600;color:var(--accent);background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);padding:3px 12px;border-radius:50px;text-transform:uppercase;letter-spacing:.5px}
-.cs-card__subtitle{font-size:.95rem;color:var(--gray-mid);font-weight:500}
+.cs-card__title{font-size:1.2rem;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.cs-card__industry{font-size:.7rem;font-weight:600;color:var(--text2);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:3px 12px;border-radius:50px;text-transform:uppercase;letter-spacing:1px}
+.cs-card__subtitle{font-size:.9rem;color:var(--text3);font-weight:500}
 .cs-card__body{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.cs-card__section h4{font-size:.8rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.cs-card__section p{font-size:.95rem;color:var(--text-secondary);line-height:1.7}
-.cs-card__results{display:flex;gap:24px;align-items:center;grid-column:1/-1;padding-top:16px;border-top:1px solid rgba(59,130,246,0.08)}
+.cs-card__section h4{font-size:.75rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.cs-card__section p{font-size:.9rem;color:var(--text2);line-height:1.7}
+.cs-card__results{display:flex;gap:24px;align-items:center;grid-column:1/-1;padding-top:20px;border-top:1px solid var(--border)}
 .cs-result{text-align:center;flex:1}
-.cs-result__number{font-size:1.8rem;font-weight:800;display:block;line-height:1.2}
-.cs-result__label{font-size:.8rem;color:var(--text-muted);font-weight:500}
+.cs-result__number{font-size:1.6rem;font-weight:800;display:block;line-height:1.2}
+.cs-result__label{font-size:.75rem;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:.5px}
 .cs-cta{text-align:center;padding:80px 0;position:relative;z-index:1}
 .cs-cta h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin-bottom:16px}
-.cs-cta p{color:var(--text-secondary);font-size:1.1rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
-.team__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:640px;margin:0 auto}
-.team-card{padding:36px 24px;text-align:center;transition:var(--transition-slow)}
-.team-card:hover{transform:translateY(-6px);border-color:rgba(59,130,246,0.15);box-shadow:0 20px 60px var(--accent-glow)}
-.team-card__avatar{display:flex;align-items:center;justify-content:center;width:80px;height:80px;margin:0 auto 16px;border-radius:50%;background:var(--gradient);font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:.5px;box-shadow:0 4px 20px var(--accent-glow)}
-.team-card__name{font-size:1.15rem;font-weight:700;margin-bottom:4px}
-.team-card__role{display:block;font-size:.85rem;color:var(--accent);font-weight:500;margin-bottom:12px}
-.team-card__bio{font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px}
+.cs-cta p{color:var(--text2);font-size:1.05rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+
+/* ===== TEAM ===== */
+.team{background:var(--bg2)}
+.team__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:640px;margin:0 auto;perspective:1200px}
+.team-card{padding:40px 28px;text-align:center;transition:transform .2s;border-radius:var(--r);background:var(--bg-card);border:1px solid var(--border);transform-style:preserve-3d;will-change:transform}
+.team-card:hover{transform:scale(1.03);border-color:var(--border-hover);box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.team-card__avatar{display:flex;align-items:center;justify-content:center;width:72px;height:72px;margin:0 auto 20px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);font-size:1.2rem;font-weight:700;color:var(--text2);transition:var(--t)}
+.team-card:hover .team-card__avatar{border-color:var(--border-hover);color:var(--text)}
+.team-card__name{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.team-card__role{display:block;font-size:.8rem;color:var(--text3);font-weight:500;margin-bottom:12px;letter-spacing:.5px}
+.team-card__bio{font-size:.85rem;color:var(--text2);line-height:1.6;margin-bottom:20px}
 .team-card__socials{display:flex;justify-content:center;gap:12px}
-.team-card__socials a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(59,130,246,0.06);color:var(--text-secondary);text-decoration:none;font-size:.85rem;font-weight:700;transition:var(--transition);border:1px solid rgba(59,130,246,0.1)}
-.team-card__socials a:hover{background:var(--gradient);color:#fff;border-color:transparent;transform:translateY(-2px)}
-.testimonials{background:var(--bg-secondary);overflow:hidden}
+.team-card__socials a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.03);color:var(--text3);text-decoration:none;font-size:.8rem;font-weight:700;transition:var(--t);border:1px solid var(--border)}
+.team-card__socials a:hover{background:var(--text);color:#000;border-color:var(--text)}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials{background:var(--bg);overflow:hidden}
 .testimonials__carousel{position:relative;max-width:640px;margin:0 auto;min-height:220px}
-.testimonial-card{position:absolute;inset:0;padding:40px 36px;text-align:center;opacity:0;transform:translateY(20px) scale(.97);transition:var(--transition-slow);pointer-events:none}
+.testimonial-card{position:absolute;inset:0;padding:44px 40px;text-align:center;opacity:0;transform:translateY(20px) scale(.97);transition:var(--ts);pointer-events:none;border-radius:var(--r);background:var(--bg-card);border:1px solid var(--border)}
 .testimonial-card.active{position:relative;opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
-.testimonial-card__stars{color:var(--accent);font-size:1.2rem;margin-bottom:20px;letter-spacing:4px}
-.testimonial-card__text{font-size:1.1rem;line-height:1.8;color:var(--text-secondary);font-style:italic;margin-bottom:28px}
+.testimonial-card__stars{color:var(--text3);font-size:1.1rem;margin-bottom:20px;letter-spacing:4px}
+.testimonial-card__text{font-size:1.05rem;line-height:1.8;color:var(--text2);font-style:italic;margin-bottom:28px}
 .testimonial-card__author{display:flex;flex-direction:column;gap:2px}
-.testimonial-card__name{font-weight:700;font-size:1rem;color:var(--text-primary)}
-.testimonial-card__role{font-size:.85rem;color:var(--text-muted)}
+.testimonial-card__name{font-weight:700;font-size:.95rem}
+.testimonial-card__role{font-size:.8rem;color:var(--text3)}
 .testimonials__dots{display:flex;justify-content:center;gap:10px;margin-top:32px}
-.dot{width:10px;height:10px;border-radius:50%;background:rgba(59,130,246,0.15);cursor:pointer;transition:var(--transition);border:1px solid rgba(59,130,246,0.1)}
-.dot.active{background:var(--accent);box-shadow:0 0 16px var(--accent-glow);border-color:var(--accent);width:28px;border-radius:5px}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.08);cursor:pointer;transition:var(--t);border:1px solid transparent}
+.dot.active{background:var(--text);width:24px;border-radius:4px}
+
+/* ===== FAQ ===== */
+.faq{background:var(--bg2)}
 .faq__list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-.faq-item{overflow:hidden;transition:var(--transition);border-radius:var(--border-radius-sm);border:1px solid rgba(255,255,255,0.04)}
-.faq-item:hover{border-color:rgba(59,130,246,0.08)}
-.faq-item__question{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;background:none;border:none;color:var(--text-primary);font-family:inherit;font-size:1rem;font-weight:600;cursor:pointer;text-align:left;transition:var(--transition)}
-.faq-item__question:hover{color:var(--accent)}
-.faq-item__arrow{font-size:1.1rem;transition:var(--transition);color:var(--text-muted);flex-shrink:0;margin-left:16px}
-.faq-item.open .faq-item__arrow{transform:rotate(180deg);color:var(--accent)}
-.faq-item__answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;padding:0 24px}
-.faq-item.open .faq-item__answer{max-height:300px;padding:0 24px 20px}
-.faq-item__answer p{color:var(--text-secondary);line-height:1.7;font-size:.95rem}
-.contact{position:relative}
-.contact__content{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start;position:relative;z-index:1}
-.contact__form{padding:40px}
+.faq-item{overflow:hidden;transition:var(--t);border-radius:var(--rs);border:1px solid var(--border);background:var(--bg-card)}
+.faq-item:hover{border-color:var(--accent-dim)}
+.faq-item__question{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;background:none;border:none;color:var(--text);font-family:inherit;font-size:.95rem;font-weight:600;cursor:pointer;text-align:left;transition:var(--t)}
+.faq-item__question:hover{color:var(--text2)}
+.faq-item__arrow{font-size:1rem;transition:var(--t);color:var(--text3);flex-shrink:0;margin-left:16px}
+.faq-item.open .faq-item__arrow{transform:rotate(180deg);color:var(--text2)}
+.faq-item__answer{max-height:0;overflow:hidden;transition:max-height .5s ease,padding .5s ease;padding:0 24px}
+.faq-item.open .faq-item__answer{max-height:400px;padding:0 24px 20px}
+.faq-item__answer p{color:var(--text2);line-height:1.7;font-size:.9rem}
+
+/* ===== CONTACT ===== */
+.contact{background:var(--bg)}
+.contact__content{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start;z-index:1}
+.contact__form{padding:40px;border-radius:var(--r);background:var(--bg-card);border:1px solid var(--border)}
 .form__group{margin-bottom:20px}
-.form__label{display:block;margin-bottom:8px;font-size:.9rem;font-weight:500;color:var(--text-secondary)}
-.form__input{width:100%;padding:14px 18px;border-radius:var(--border-radius-sm);border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--text-primary);font-family:inherit;font-size:.95rem;transition:var(--transition);outline:none}
-.form__input::placeholder{color:var(--text-muted)}
-.form__input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
-.form__input.error{border-color:#EF4444;box-shadow:0 0 0 3px rgba(239,68,68,0.15)}
+.form__label{display:block;margin-bottom:8px;font-size:.85rem;font-weight:500;color:var(--text2)}
+.form__input{width:100%;padding:14px 18px;border-radius:var(--rs);border:1px solid var(--border);background:rgba(255,255,255,.02);color:var(--text);font-family:inherit;font-size:.9rem;transition:var(--t);outline:none}
+.form__input::placeholder{color:var(--text3)}
+.form__input:focus{border-color:var(--text);background:rgba(255,255,255,.04)}
+.form__input.error{border-color:var(--text2)}
 .form__textarea{resize:vertical;min-height:120px}
-.form__error{display:block;margin-top:6px;font-size:.8rem;color:#EF4444;min-height:18px}
+.form__error{display:block;margin-top:6px;font-size:.75rem;color:var(--text3);min-height:18px}
 .contact__info{display:flex;flex-direction:column;gap:16px}
-.contact-info-item{display:flex;align-items:center;gap:16px;padding:20px 24px;transition:var(--transition)}
-.contact-info-item:hover{border-color:rgba(59,130,246,0.08);box-shadow:0 4px 20px var(--accent-glow)}
-.contact-info-item__icon{font-size:1.5rem;flex-shrink:0}
+.contact-info-item{display:flex;align-items:center;gap:16px;padding:20px 24px;transition:var(--t);border-radius:var(--r);background:var(--bg-card);border:1px solid var(--border)}
+.contact-info-item:hover{border-color:var(--border-hover);box-shadow:0 8px 40px rgba(0,0,0,.4)}
+.contact-info-item__icon{font-size:1.3rem;flex-shrink:0;opacity:.4}
 .contact-info-item div{display:flex;flex-direction:column;gap:2px}
-.contact-info-item__label{font-size:.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
-.contact-info-item__value{font-size:.95rem;font-weight:500}
-.footer{background:var(--bg-secondary);border-top:1px solid rgba(59,130,246,0.06);padding:64px 0 0}
+.contact-info-item__label{font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px}
+.contact-info-item__value{font-size:.9rem;font-weight:500}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 0 0}
 .footer__inner{display:grid;grid-template-columns:1.5fr 2fr;gap:64px;padding-bottom:48px}
-.footer__desc{color:var(--text-secondary);font-size:.95rem;margin-top:16px;max-width:300px;line-height:1.7}
+.footer__desc{color:var(--text2);font-size:.9rem;margin-top:16px;max-width:300px;line-height:1.7}
 .footer__links{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.footer__col h4{font-size:.85rem;font-weight:700;color:var(--accent);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
-.footer__col a{display:block;color:var(--text-secondary);text-decoration:none;font-size:.95rem;padding:6px 0;transition:var(--transition)}
-.footer__col a:hover{color:var(--accent)}
-.footer__bottom{padding:24px 0;border-top:1px solid rgba(59,130,246,0.06);text-align:center}
-.footer__bottom p{color:var(--text-muted);font-size:.85rem}
+.footer__col h4{font-size:.75rem;font-weight:700;color:var(--text3);margin-bottom:16px;text-transform:uppercase;letter-spacing:1.5px}
+.footer__col a{display:block;color:var(--text2);text-decoration:none;font-size:.9rem;padding:6px 0;transition:var(--t)}
+.footer__col a:hover{color:var(--text)}
+.footer__bottom{padding:24px 0;border-top:1px solid var(--border);text-align:center}
+.footer__bottom p{color:var(--text3);font-size:.8rem}
+
+/* ===== LANG SWITCHER ===== */
 .lang-switcher{display:flex;align-items:center;gap:4px;margin-left:8px}
-.lang-btn{background:none;border:1px solid rgba(255,255,255,0.08);color:var(--text-muted);font-family:inherit;font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:6px;cursor:pointer;transition:var(--transition);text-transform:uppercase;letter-spacing:.5px}
-.lang-btn:hover{color:var(--text-secondary);border-color:rgba(59,130,246,0.2)}
-.lang-btn.active{color:#fff;background:var(--gradient);border-color:transparent}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.lang-btn{background:none;border:1px solid var(--border);color:var(--text3);font-family:inherit;font-size:.7rem;font-weight:600;padding:4px 10px;border-radius:6px;cursor:pointer;transition:var(--t);text-transform:uppercase;letter-spacing:.5px}
+.lang-btn:hover{color:var(--text2);border-color:var(--accent-dim)}
+.lang-btn.active{color:#000;background:var(--text);border-color:var(--text)}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:1.1rem;cursor:pointer;transition:var(--t);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(20px);pointer-events:none}
+.back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.back-to-top:hover{background:var(--text);color:#000;border-color:var(--text)}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(50px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-delay-1{transition-delay:.1s}
 .reveal-delay-2{transition-delay:.2s}
 .reveal-delay-3{transition-delay:.3s}
 .reveal-delay-4{transition-delay:.4s}
-@media(max-width:1024px){.services__grid{grid-template-columns:repeat(2,1fr)}.portfolio__grid{grid-template-columns:repeat(2,1fr)}.cs-card{grid-template-columns:1fr;gap:20px;padding:28px}.cs-card__logo{width:56px;height:56px}.cs-card__logo svg{width:56px;height:56px}.cs-card__body{grid-template-columns:1fr}.cs-card__results{flex-wrap:wrap}.contact__content{grid-template-columns:1fr}.footer__inner{grid-template-columns:1fr;gap:48px}}
-@media(max-width:768px){.section{padding:72px 0}.section__header{margin-bottom:48px}.section__desc{font-size:1rem}.nav__links{position:fixed;top:var(--nav-height);left:0;right:0;background:rgba(8,8,18,0.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid rgba(59,130,246,0.08);transform:translateY(-120%);opacity:0;transition:var(--transition-slow);pointer-events:none}.nav__links.open{transform:translateY(0);opacity:1;pointer-events:auto}.nav__hamburger{display:flex}.nav__hamburger.open span:first-child{transform:rotate(45deg) translate(5px,5px)}.nav__hamburger.open span:nth-child(2){opacity:0}.nav__hamburger.open span:last-child{transform:rotate(-45deg) translate(5px,-5px)}.nav__cta{display:inline-flex}.hero__stats{gap:24px;flex-wrap:wrap}.hero__ctas{flex-direction:column;align-items:stretch}.hero__ctas .btn{text-align:center}.services__grid{grid-template-columns:1fr}.about__content{grid-template-columns:1fr;gap:36px}.about__stats{grid-template-columns:1fr 1fr}.portfolio__grid{grid-template-columns:1fr}.portfolio-card__image{height:140px}.cs-card{padding:24px 20px}.cs-card__results{flex-direction:column;gap:16px}.cs-result__number{font-size:1.5rem}.team__grid{grid-template-columns:1fr 1fr;gap:16px}.team-card{padding:28px 16px}.testimonial-card{padding:32px 20px}.testimonial-card__text{font-size:1rem}.contact__form{padding:28px 20px}.footer__links{grid-template-columns:1fr 1fr;gap:24px}.footer{padding:48px 0 0}}
-@media(max-width:480px){.container{padding:0 16px}.hero__title{font-size:2rem}.hero__stats{gap:16px}.stat__number{font-size:1.8rem}.team__grid{grid-template-columns:1fr}.footer__links{grid-template-columns:1fr}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+.services__grid{grid-template-columns:repeat(2,1fr)}
+.portfolio__grid{grid-template-columns:repeat(2,1fr)}
+.cs-card{grid-template-columns:1fr;gap:24px;padding:32px}
+.cs-card__logo{width:48px;height:48px}
+.cs-card__logo svg{width:48px;height:48px}
+.cs-card__body{grid-template-columns:1fr}
+.cs-card__results{flex-wrap:wrap}
+.contact__content{grid-template-columns:1fr}
+.footer__inner{grid-template-columns:1fr;gap:48px}
+}
+@media(max-width:768px){
+body{cursor:auto}
+.cursor,.cursor-dot{display:none}
+.btn{cursor:pointer}
+.section{padding:80px 0}
+.section__header{margin-bottom:40px}
+.section__desc{font-size:1rem}
+.nav__links{position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(0,0,0,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--border);transform:translateY(-120%);opacity:0;transition:var(--ts);pointer-events:none}
+.nav__links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.nav__hamburger{display:flex}
+.nav__hamburger.open span:first-child{transform:rotate(45deg) translate(5px,5px)}
+.nav__hamburger.open span:nth-child(2){opacity:0}
+.nav__hamburger.open span:last-child{transform:rotate(-45deg) translate(5px,-5px)}
+.nav__cta{display:inline-flex}
+.hero__stats{gap:32px;flex-wrap:wrap}
+.hero__ctas{flex-direction:column;align-items:stretch}
+.hero__ctas .btn{text-align:center}
+.services__grid{grid-template-columns:1fr}
+.about__content{grid-template-columns:1fr;gap:36px}
+.about__stats{grid-template-columns:1fr 1fr}
+.portfolio__grid{grid-template-columns:1fr}
+.portfolio-card__image{height:140px}
+.cs-card{padding:24px 20px}
+.cs-card__results{flex-direction:column;gap:12px}
+.cs-result__number{font-size:1.4rem}
+.team__grid{grid-template-columns:1fr 1fr;gap:16px}
+.team-card{padding:32px 20px}
+.testimonial-card{padding:32px 24px}
+.testimonial-card__text{font-size:1rem}
+.contact__form{padding:28px 20px}
+.footer__links{grid-template-columns:1fr 1fr;gap:24px}
+.footer{padding:48px 0 0}
+.back-to-top{bottom:20px;right:20px;width:40px;height:40px}
+}
+@media(max-width:480px){
+.container{padding:0 16px}
+.hero__title{font-size:2rem}
+.hero__stats{gap:16px}
+.stat__number{font-size:1.6rem}
+.team__grid{grid-template-columns:1fr}
+.footer__links{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<canvas id="particles"></canvas>
+<div class="mouse-glow" id="mouseGlow"></div>
+
 <header class="nav" id="nav">
 <div class="container nav__inner">
-<a href="#hero" class="nav__logo">Kobie<span class="accent">AI</span></a>
+<a href="#hero" class="nav__logo">Kobie<span>AI</span></a>
 <nav class="nav__links" id="navLinks">
 <a href="#services" class="nav__link" data-i18n="nav-services">Services</a>
 <a href="#about" class="nav__link" data-i18n="nav-about">About</a>
@@ -223,22 +331,30 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 </div>
 </header>
 
-<section class="hero" id="hero" style="background-color:#080812">
-<div class="hero__bg"><div class="grid-lines"></div><div class="orb orb--blue"></div><div class="orb orb--purple"></div></div>
+<section class="hero" id="hero">
+<div class="hero-glow hero-glow--2"></div>
+<div class="hero-lines"></div>
+<canvas id="icosahedron"></canvas>
 <div class="container hero__inner">
-<h1 class="hero__title" data-i18n-html="hero-title">Build Smarter <span class="gradient-text">with AI</span></h1>
-<p class="hero__sub" data-i18n="hero-sub">KobieAI delivers cutting-edge artificial intelligence solutions — from intelligent automation and custom chatbots to advanced data analytics.</p>
+<div class="hero__badge"><span></span> AI Solutions for Modern Business</div>
+<h1 class="hero__title">
+<span class="hero__title-line"><span>Build Smarter</span></span>
+<span class="hero__title-line"><span>with <span class="gradient-text">Artificial Intelligence</span></span></span>
+</h1>
+<p class="hero__sub" data-i18n="hero-sub">KobieAI delivers cutting-edge AI solutions — from intelligent automation and custom chatbots to advanced data analytics. Transform your business with the power of AI.</p>
 <div class="hero__ctas">
 <a href="#contact" class="btn btn--primary btn--lg" data-i18n="hero-cta-start">Get Started</a>
-<a href="#services" class="btn btn--outline btn--lg" data-i18n="hero-cta-learn">Learn More</a>
+<a href="#services" class="btn btn--lg" data-i18n="hero-cta-learn">Learn More</a>
 </div>
 <div class="hero__stats">
-<div class="stat"><svg class="stat__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span class="stat__number" data-target="150">0</span><span class="stat__suffix">+</span><span class="stat__label" data-i18n="hero-stat-projects">Projects Delivered</span></div>
-<div class="stat"><svg class="stat__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="stat__number" data-target="50">0</span><span class="stat__suffix">+</span><span class="stat__label" data-i18n="hero-stat-clients">Happy Clients</span></div>
-<div class="stat"><svg class="stat__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="stat__number" data-target="99.9">0</span><span class="stat__suffix">%</span><span class="stat__label" data-i18n="hero-stat-uptime">Uptime Guarantee</span></div>
+<div class="stat"><span class="stat__number gradient-text" data-target="150">0</span><span class="stat__suffix">+</span><span class="stat__label" data-i18n="hero-stat-projects">Projects Delivered</span></div>
+<div class="stat"><span class="stat__number gradient-text" data-target="50">0</span><span class="stat__suffix">+</span><span class="stat__label" data-i18n="hero-stat-clients">Happy Clients</span></div>
+<div class="stat"><span class="stat__number gradient-text" data-target="99.9">0</span><span class="stat__suffix">%</span><span class="stat__label" data-i18n="hero-stat-uptime">Uptime Guarantee</span></div>
 </div>
 </div>
 </section>
+
+<div class="section-divider"></div>
 
 <section class="section services" id="services">
 <div class="container">
@@ -247,21 +363,21 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <h2 class="section__title" data-i18n-html="services-title">Our <span class="gradient-text">Services</span></h2>
 <p class="section__desc" data-i18n="services-desc">We architect and deploy AI solutions that drive real business outcomes.</p>
 </div>
-<div class="services__grid">
-<div class="service-card glass glass-accent">
-<svg class="service-card__icon" viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="14" fill="rgba(59,130,246,0.1)"/><path d="M18 34h20M28 20v14M22 26l6-6 6 6" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="services__grid" data-tilt>
+<div class="service-card">
+<svg class="service-card__icon" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="12" fill="rgba(255,255,255,.04)"/><path d="M14 30h20M24 16v14M18 22l6-6 6 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <h3 class="service-card__title" data-i18n="services-card1-title">AI Automation</h3>
 <p class="service-card__desc" data-i18n="services-card1-desc">Automate repetitive workflows, reduce operational overhead, and let your team focus on what matters most.</p>
 <ul class="service-card__features"><li data-i18n="services-card1-f1">Workflow automation</li><li data-i18n="services-card1-f2">Document intelligence</li><li data-i18n="services-card1-f3">Process optimization</li></ul>
 </div>
-<div class="service-card glass glass-accent">
-<svg class="service-card__icon" viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="14" fill="rgba(139,92,246,0.1)"/><path d="M20 26c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8h-2l-4 4v-4h-2c-4.4 0-8-3.6-8-8z" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="service-card">
+<svg class="service-card__icon" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="12" fill="rgba(255,255,255,.04)"/><path d="M16 22c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8h-2l-4 4v-4h-2c-4.4 0-8-3.6-8-8z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <h3 class="service-card__title" data-i18n="services-card2-title">Smart Chatbots</h3>
 <p class="service-card__desc" data-i18n="services-card2-desc">Custom conversational AI agents trained on your data. Handle support, lead generation, and internal queries with 24/7 availability.</p>
 <ul class="service-card__features"><li data-i18n="services-card2-f1">Custom LLM chatbots</li><li data-i18n="services-card2-f2">RAG-powered answers</li><li data-i18n="services-card2-f3">Multi-channel deployment</li></ul>
 </div>
-<div class="service-card glass glass-accent">
-<svg class="service-card__icon" viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="14" fill="rgba(236,72,153,0.1)"/><path d="M16 40V20l8-4 8 4 8-4v20l-8 4-8-4-8 4z" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 16v20M24 16v20" stroke="#EC4899" stroke-width="2" stroke-linecap="round"/></svg>
+<div class="service-card">
+<svg class="service-card__icon" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="12" fill="rgba(255,255,255,.04)"/><path d="M12 36V18l8-4 8 4 8-4v18l-8 4-8-4-8 4z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 14v18M20 14v18" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
 <h3 class="service-card__title" data-i18n="services-card3-title">Data Analytics</h3>
 <p class="service-card__desc" data-i18n="services-card3-desc">Turn raw data into actionable insights. We build custom dashboards, predictive models, and reporting pipelines.</p>
 <ul class="service-card__features"><li data-i18n="services-card3-f1">Predictive analytics</li><li data-i18n="services-card3-f2">Real-time dashboards</li><li data-i18n="services-card3-f3">Data pipeline engineering</li></ul>
@@ -270,12 +386,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 </div>
 </section>
 
+<div class="section-divider"></div>
+
 <section class="section about" id="about">
 <div class="container">
 <div class="section__header">
 <span class="section__tag" data-i18n="about-tag">Who We Are</span>
 <h2 class="section__title" data-i18n-html="about-title">About <span class="gradient-text">KobieAI</span></h2>
-<p class="section__desc" data-i18n="about-desc">We're a team of AI engineers, data scientists, and product thinkers on a mission to make artificial intelligence accessible for every business.</p>
+<p class="section__desc" data-i18n="about-desc">We're a team of AI engineers, data scientists, and product thinkers on a mission to make AI accessible for every business.</p>
 </div>
 <div class="about__content">
 <div class="about__text">
@@ -284,114 +402,86 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <p class="about__highlight" data-i18n-html="about-mantra"><span class="gradient-text">Our mantra:</span> Build smart. Ship fast. Deliver value.</p>
 </div>
 <div class="about__stats">
-<div class="about-stat glass glass-accent"><span class="about-stat__number gradient-text">150+</span><span class="about-stat__label" data-i18n="about-stat-projects">Projects</span></div>
-<div class="about-stat glass glass-accent"><span class="about-stat__number gradient-text">50+</span><span class="about-stat__label" data-i18n="about-stat-clients">Clients</span></div>
-<div class="about-stat glass glass-accent"><span class="about-stat__number gradient-text">2</span><span class="about-stat__label" data-i18n="about-stat-team">Founders</span></div>
-<div class="about-stat glass glass-accent"><span class="about-stat__number gradient-text">99.9%</span><span class="about-stat__label" data-i18n="about-stat-uptime">Uptime</span></div>
+<div class="about-stat"><span class="about-stat__number gradient-text">150+</span><span class="about-stat__label" data-i18n="about-stat-projects">Projects</span></div>
+<div class="about-stat"><span class="about-stat__number gradient-text">50+</span><span class="about-stat__label" data-i18n="about-stat-clients">Clients</span></div>
+<div class="about-stat"><span class="about-stat__number gradient-text">2</span><span class="about-stat__label" data-i18n="about-stat-team">Founders</span></div>
+<div class="about-stat"><span class="about-stat__number gradient-text">99.9%</span><span class="about-stat__label" data-i18n="about-stat-uptime">Uptime</span></div>
 </div>
 </div>
 </div>
 </section>
+
+<div class="section-divider"></div>
 
 <section class="section portfolio" id="portfolio">
 <div class="container">
 <div class="section__header">
 <span class="section__tag" data-i18n="portfolio-tag">Our Work</span>
 <h2 class="section__title" data-i18n-html="portfolio-title">Featured <span class="gradient-text">Projects</span></h2>
-<p class="section__desc" data-i18n="portfolio-desc">Real solutions, real results. Here's a glimpse of what we've built.</p>
+<p class="section__desc" data-i18n="portfolio-desc">Real solutions, real results.</p>
 </div>
-<div class="portfolio__grid">
-<div class="portfolio-card glass glass-accent">
-<div class="portfolio-card__image portfolio-card__image--norditech">
-<svg class="portfolio-card__logo" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.2)" stroke-width="1.2"/><path d="M22 20L32 32L42 20" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 44L32 32L42 44" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="32" r="2.5" fill="white"/></svg></div>
-<div class="portfolio-card__body">
-<h3 class="portfolio-card__title">NordiTech</h3>
-<p class="portfolio-card__desc" data-i18n="portfolio-card1-desc">AI-powered quality control — 76% fewer defects, 35% less downtime.</p>
-<div class="portfolio-card__tags"><span data-i18n="portfolio-tag-mfg">Manufacturing</span><span>Computer Vision</span><span data-i18n="portfolio-tag-automation">Automation</span></div>
-</div></div>
-<div class="portfolio-card glass glass-accent">
-<div class="portfolio-card__image portfolio-card__image--greenleaf">
-<svg class="portfolio-card__logo" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.2)" stroke-width="1.2"/><path d="M32 16C32 16 20 24 20 36C20 42.6 25.4 48 32 48C38.6 48 44 42.6 44 36C44 24 32 16 32 16Z" fill="rgba(16,185,129,0.15)" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M32 16V48" stroke="white" stroke-width="2"/><path d="M32 28L40 36" stroke="white" stroke-width="2"/><path d="M32 36L24 28" stroke="white" stroke-width="2"/></svg></div>
-<div class="portfolio-card__body">
-<h3 class="portfolio-card__title">GreenLeaf</h3>
-<p class="portfolio-card__desc" data-i18n="portfolio-card2-desc">Predictive analytics for retail — 28% less waste, 15% revenue uplift.</p>
-<div class="portfolio-card__tags"><span data-i18n="portfolio-tag-retail">Retail</span><span data-i18n="portfolio-tag-analytics">Analytics</span><span>ML</span></div>
-</div></div>
-<div class="portfolio-card glass glass-accent">
-<div class="portfolio-card__image portfolio-card__image--medicore">
-<svg class="portfolio-card__logo" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="rgba(236,72,153,0.1)" stroke="rgba(236,72,153,0.2)" stroke-width="1.2"/><circle cx="32" cy="32" r="14" stroke="white" stroke-width="2" fill="none"/><path d="M32 24V40" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M24 32H40" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div>
-<div class="portfolio-card__body">
-<h3 class="portfolio-card__title">MediCore</h3>
-<p class="portfolio-card__desc" data-i18n="portfolio-card3-desc">AI medical document processing — 82% faster, NLP + RAG.</p>
-<div class="portfolio-card__tags"><span data-i18n="portfolio-tag-healthcare">Healthcare</span><span>NLP</span><span>RAG</span></div>
-</div></div>
-<div class="portfolio-card glass glass-accent">
-<div class="portfolio-card__image portfolio-card__image--aerologis">
-<svg class="portfolio-card__logo" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="rgba(139,92,246,0.1)" stroke="rgba(139,92,246,0.2)" stroke-width="1.2"/><path d="M20 44L32 20L44 44" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 32H50" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="32" cy="32" r="2.5" fill="white"/></svg></div>
-<div class="portfolio-card__body">
-<h3 class="portfolio-card__title">AeroLogis</h3>
-<p class="portfolio-card__desc" data-i18n="portfolio-card4-desc">Route optimization — 22% fuel reduction, 30% faster deliveries.</p>
-<div class="portfolio-card__tags"><span data-i18n="portfolio-tag-logistics">Logistics</span><span data-i18n="portfolio-tag-optimization">Optimization</span><span data-i18n="portfolio-tag-realtime">Real-time</span></div>
-</div></div>
+<div class="portfolio__grid" data-tilt>
+<div class="portfolio-card">
+<div class="portfolio-card__image"><svg class="portfolio-card__logo" viewBox="0 0 48 48" fill="none"><path d="M14 14L24 24L34 14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 34L24 24L34 34" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="2" fill="#fff"/></svg></div>
+<div class="portfolio-card__body"><h3 class="portfolio-card__title">NordiTech</h3><p class="portfolio-card__desc" data-i18n="portfolio-card1-desc">AI-powered quality control — 76% fewer defects.</p><div class="portfolio-card__tags"><span data-i18n="portfolio-tag-mfg">Manufacturing</span><span>Computer Vision</span><span data-i18n="portfolio-tag-automation">Automation</span></div></div></div>
+<div class="portfolio-card">
+<div class="portfolio-card__image"><svg class="portfolio-card__logo" viewBox="0 0 48 48" fill="none"><path d="M24 12C24 12 14 18 14 28C14 33.5 18.5 38 24 38C29.5 38 34 33.5 34 28C34 18 24 12 24 12Z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/><path d="M24 12V38" stroke="#fff" stroke-width="1.5"/><path d="M24 22L30 28" stroke="#fff" stroke-width="1.5"/><path d="M24 28L18 22" stroke="#fff" stroke-width="1.5"/></svg></div>
+<div class="portfolio-card__body"><h3 class="portfolio-card__title">GreenLeaf</h3><p class="portfolio-card__desc" data-i18n="portfolio-card2-desc">Predictive analytics — 28% less waste.</p><div class="portfolio-card__tags"><span data-i18n="portfolio-tag-retail">Retail</span><span data-i18n="portfolio-tag-analytics">Analytics</span><span>ML</span></div></div></div>
+<div class="portfolio-card">
+<div class="portfolio-card__image"><svg class="portfolio-card__logo" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="12" stroke="#fff" stroke-width="1.5" fill="none"/><path d="M24 18V30" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M18 24H30" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+<div class="portfolio-card__body"><h3 class="portfolio-card__title">MediCore</h3><p class="portfolio-card__desc" data-i18n="portfolio-card3-desc">AI medical document processing — 82% faster.</p><div class="portfolio-card__tags"><span data-i18n="portfolio-tag-healthcare">Healthcare</span><span>NLP</span><span>RAG</span></div></div></div>
+<div class="portfolio-card">
+<div class="portfolio-card__image"><svg class="portfolio-card__logo" viewBox="0 0 48 48" fill="none"><path d="M14 36L24 16L34 36" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 26H38" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><circle cx="24" cy="26" r="2" fill="#fff"/></svg></div>
+<div class="portfolio-card__body"><h3 class="portfolio-card__title">AeroLogis</h3><p class="portfolio-card__desc" data-i18n="portfolio-card4-desc">Route optimization — 22% fuel reduction.</p><div class="portfolio-card__tags"><span data-i18n="portfolio-tag-logistics">Logistics</span><span data-i18n="portfolio-tag-optimization">Optimization</span><span data-i18n="portfolio-tag-realtime">Real-time</span></div></div></div>
 </div>
 </div>
 </section>
 
+<div class="section-divider"></div>
+
 <section class="section casestudies" id="casestudies">
-<div class="orb orb--blue"></div>
-<div class="orb orb--purple"></div>
 <div class="container">
 <div class="section__header">
 <span class="section__tag" data-i18n="casestudies-tag">Case Studies</span>
 <h2 class="section__title" data-i18n-html="casestudies-title">Real Impact, <span class="gradient-text">Real Stories</span></h2>
-<p class="section__desc" data-i18n="casestudies-desc">Deep dives into how KobieAI transformed businesses across industries.</p>
+<p class="section__desc" data-i18n="casestudies-desc">Deep dives into how KobieAI transformed businesses.</p>
 </div>
-<div class="cs-card glass glass-accent">
-<div class="cs-card__logo">
-<svg viewBox="0 0 72 72" fill="none"><rect width="72" height="72" rx="18" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.2)" stroke-width="1.2"/><path d="M26 22L36 34L46 22" stroke="#3B82F6" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 50L36 38L46 50" stroke="#3B82F6" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="36" cy="36" r="2.5" fill="#3B82F6"/></svg></div>
+<div class="cs-card">
+<div class="cs-card__logo"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.08)" stroke-width="1"/><path d="M22 20L32 30L42 20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 44L32 34L42 44" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="32" r="2" fill="#fff"/></svg></div>
 <div class="cs-card__content">
-<div class="cs-card__header">
-<h3 class="cs-card__title">NordiTech <span class="cs-card__industry" data-i18n="cs-nordi-industry">Manufacturing</span></h3>
-<span class="cs-card__subtitle" data-i18n="cs-nordi-subtitle">AI-driven quality control and production optimization</span>
-</div>
+<div class="cs-card__header"><h3 class="cs-card__title">NordiTech <span class="cs-card__industry" data-i18n="cs-nordi-industry">Manufacturing</span></h3><span class="cs-card__subtitle" data-i18n="cs-nordi-subtitle">AI-driven quality control</span></div>
 <div class="cs-card__body">
-<div class="cs-card__section"><h4 data-i18n="cs-label-challenge">The Challenge</h4><p data-i18n="cs-nordi-challenge">NordiTech, a mid-sized automotive parts manufacturer, was struggling with a 12% defect rate in their production line. Manual visual inspection was slow, inconsistent, and bottlenecked throughput.</p></div>
-<div class="cs-card__section"><h4 data-i18n="cs-label-solution">Our Solution</h4><p data-i18n="cs-nordi-solution">We deployed a computer vision system across 6 production lines, powered by custom-trained ML models. The system detects defects in real time, flags anomalies, and integrates with existing ERP for automatic reporting.</p></div>
+<div class="cs-card__section"><h4 data-i18n="cs-label-challenge">The Challenge</h4><p data-i18n="cs-nordi-challenge">NordiTech struggled with a 12% defect rate.</p></div>
+<div class="cs-card__section"><h4 data-i18n="cs-label-solution">Our Solution</h4><p data-i18n="cs-nordi-solution">Computer vision system across 6 production lines.</p></div>
 <div class="cs-card__results"><div class="cs-result"><span class="cs-result__number gradient-text">76%</span><span class="cs-result__label" data-i18n="cs-nordi-r1">Fewer Defects</span></div><div class="cs-result"><span class="cs-result__number gradient-text">35%</span><span class="cs-result__label" data-i18n="cs-nordi-r2">Less Downtime</span></div><div class="cs-result"><span class="cs-result__number gradient-text">$2.4M</span><span class="cs-result__label" data-i18n="cs-nordi-r3">Annual Savings</span></div></div>
 </div></div></div>
-<div class="cs-card glass glass-accent">
-<div class="cs-card__logo">
-<svg viewBox="0 0 72 72" fill="none"><rect width="72" height="72" rx="18" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.2)" stroke-width="1.2"/><path d="M36 18C36 18 24 26 24 38C24 44.6 29.4 50 36 50C42.6 50 48 44.6 48 38C48 26 36 18 36 18Z" fill="rgba(16,185,129,0.12)" stroke="#10B981" stroke-width="2" stroke-linejoin="round"/><path d="M36 18V50" stroke="#10B981" stroke-width="2"/><path d="M36 30L44 38" stroke="#10B981" stroke-width="2"/><path d="M36 38L28 30" stroke="#10B981" stroke-width="2"/></svg></div>
+<div class="cs-card">
+<div class="cs-card__logo"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.08)" stroke-width="1"/><path d="M32 16C32 16 22 22 22 32C22 37.5 26.5 42 32 42C37.5 42 42 37.5 42 32C42 22 32 16 32 16Z" fill="rgba(255,255,255,.04)" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/><path d="M32 16V42" stroke="#fff" stroke-width="1.5"/><path d="M32 26L38 32" stroke="#fff" stroke-width="1.5"/><path d="M32 32L26 26" stroke="#fff" stroke-width="1.5"/></svg></div>
 <div class="cs-card__content">
-<div class="cs-card__header">
-<h3 class="cs-card__title">GreenLeaf <span class="cs-card__industry" data-i18n="cs-greenleaf-industry">Retail</span></h3>
-<span class="cs-card__subtitle" data-i18n="cs-greenleaf-subtitle">Predictive analytics and demand forecasting</span>
-</div>
+<div class="cs-card__header"><h3 class="cs-card__title">GreenLeaf <span class="cs-card__industry" data-i18n="cs-greenleaf-industry">Retail</span></h3><span class="cs-card__subtitle" data-i18n="cs-greenleaf-subtitle">Predictive analytics</span></div>
 <div class="cs-card__body">
-<div class="cs-card__section"><h4 data-i18n="cs-label-challenge">The Challenge</h4><p data-i18n="cs-greenleaf-challenge">GreenLeaf, a grocery chain with 48 stores across Central Europe, was losing millions to overstocking and waste. Their legacy forecasting system couldn't handle seasonal fluctuations.</p></div>
-<div class="cs-card__section"><h4 data-i18n="cs-label-solution">Our Solution</h4><p data-i18n="cs-greenleaf-solution">We built a custom ML forecasting engine that ingests 3 years of historical sales, weather data, and local event calendars. The system generates daily replenishment recommendations per store.</p></div>
+<div class="cs-card__section"><h4 data-i18n="cs-label-challenge">The Challenge</h4><p data-i18n="cs-greenleaf-challenge">GreenLeaf lost millions to overstocking.</p></div>
+<div class="cs-card__section"><h4 data-i18n="cs-label-solution">Our Solution</h4><p data-i18n="cs-greenleaf-solution">Custom ML forecasting engine.</p></div>
 <div class="cs-card__results"><div class="cs-result"><span class="cs-result__number gradient-text">28%</span><span class="cs-result__label" data-i18n="cs-greenleaf-r1">Less Waste</span></div><div class="cs-result"><span class="cs-result__number gradient-text">15%</span><span class="cs-result__label" data-i18n="cs-greenleaf-r2">Revenue Uplift</span></div><div class="cs-result"><span class="cs-result__number gradient-text">$3.1M</span><span class="cs-result__label" data-i18n="cs-greenleaf-r3">Annual Savings</span></div></div>
 </div></div></div>
-<div class="cs-card glass glass-accent">
-<div class="cs-card__logo">
-<svg viewBox="0 0 72 72" fill="none"><rect width="72" height="72" rx="18" fill="rgba(139,92,246,0.1)" stroke="rgba(139,92,246,0.2)" stroke-width="1.2"/><path d="M24 48L36 24L48 48" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 36H54" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round"/><circle cx="36" cy="36" r="2.5" fill="#8B5CF6"/></svg></div>
+<div class="cs-card">
+<div class="cs-card__logo"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.08)" stroke-width="1"/><path d="M20 44L32 20L44 44" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 32H50" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="32" r="2" fill="#fff"/></svg></div>
 <div class="cs-card__content">
-<div class="cs-card__header">
-<h3 class="cs-card__title">AeroLogis <span class="cs-card__industry" data-i18n="cs-aero-industry">Logistics</span></h3>
-<span class="cs-card__subtitle" data-i18n="cs-aero-subtitle">Real-time route optimization and fleet management</span>
-</div>
+<div class="cs-card__header"><h3 class="cs-card__title">AeroLogis <span class="cs-card__industry" data-i18n="cs-aero-industry">Logistics</span></h3><span class="cs-card__subtitle" data-i18n="cs-aero-subtitle">Route optimization</span></div>
 <div class="cs-card__body">
-<div class="cs-card__section"><h4 data-i18n="cs-label-challenge">The Challenge</h4><p data-i18n="cs-aero-challenge">AeroLogis operates a fleet of 120 delivery vehicles across the Czech Republic and Slovakia. Manual route planning was causing 18% fuel waste and missed delivery windows.</p></div>
-<div class="cs-card__section"><h4 data-i18n="cs-label-solution">Our Solution</h4><p data-i18n="cs-aero-solution">We deployed a real-time route optimization engine that considers traffic, weather, delivery windows, and vehicle capacity. The system dynamically re-routes drivers when conditions change.</p></div>
+<div class="cs-card__section"><h4 data-i18n="cs-label-challenge">The Challenge</h4><p data-i18n="cs-aero-challenge">AeroLogis had 18% fuel waste.</p></div>
+<div class="cs-card__section"><h4 data-i18n="cs-label-solution">Our Solution</h4><p data-i18n="cs-aero-solution">Real-time route optimization engine.</p></div>
 <div class="cs-card__results"><div class="cs-result"><span class="cs-result__number gradient-text">22%</span><span class="cs-result__label" data-i18n="cs-aero-r1">Fuel Reduction</span></div><div class="cs-result"><span class="cs-result__number gradient-text">30%</span><span class="cs-result__label" data-i18n="cs-aero-r2">Faster Deliveries</span></div><div class="cs-result"><span class="cs-result__number gradient-text">$1.8M</span><span class="cs-result__label" data-i18n="cs-aero-r3">Annual Savings</span></div></div>
 </div></div></div>
 <div class="cs-cta">
 <h2 data-i18n-html="cs-cta-title">Ready to Transform <span class="gradient-text">Your Business</span>?</h2>
-<p data-i18n="cs-cta-desc">Let's discuss how KobieAI can solve your biggest challenges. Get in touch for a free consultation.</p>
+<p data-i18n="cs-cta-desc">Let's discuss how KobieAI can solve your biggest challenges.</p>
 <a href="#contact" class="btn btn--primary btn--lg" data-i18n="cs-cta-btn">Start the Conversation</a>
 </div>
 </div>
 </section>
+
+<div class="section-divider"></div>
 
 <section class="section team" id="team">
 <div class="container">
@@ -400,99 +490,74 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <h2 class="section__title" data-i18n-html="team-title">Meet the <span class="gradient-text">Team</span></h2>
 <p class="section__desc" data-i18n="team-desc">The founders behind KobieAI.</p>
 </div>
-<div class="team__grid">
-<div class="team-card glass glass-accent">
+<div class="team__grid" data-tilt>
+<div class="team-card">
 <div class="team-card__avatar">JK</div>
 <h3 class="team-card__name">Jakub Kobierski</h3>
 <span class="team-card__role">Founder</span>
-<p class="team-card__bio" data-i18n="team-jakub-bio">AI engineer with deep expertise in large language models, automation pipelines, and production-grade AI systems.</p>
-<div class="team-card__socials">
-<a href="https://www.linkedin.com/in/jakub-kobierski-264a7b259/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-<a href="https://www.instagram.com/jakubkobierski/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+<p class="team-card__bio" data-i18n="team-jakub-bio">AI engineer with deep expertise in LLMs, automation pipelines, and production-grade AI systems.</p>
+<div class="team-card__socials"><a href="https://www.linkedin.com/in/jakub-kobierski-264a7b259/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a><a href="https://www.instagram.com/jakubkobierski/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a></div>
 </div>
-</div>
-<div class="team-card glass glass-accent">
+<div class="team-card">
 <div class="team-card__avatar">MC</div>
 <h3 class="team-card__name">Matyáš Cudzik</h3>
 <span class="team-card__role">Co-founder</span>
 <p class="team-card__bio" data-i18n="team-matyas-bio">AI specialist focused on conversational agents, data analytics, and scalable AI infrastructure.</p>
-<div class="team-card__socials">
-<a href="https://www.instagram.com/matycudzik/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
-</div>
+<div class="team-card__socials"><a href="https://www.instagram.com/matycudzik/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a></div>
 </div>
 </div>
 </div>
 </section>
+
+<div class="section-divider"></div>
 
 <section class="section testimonials" id="testimonials">
 <div class="container">
 <div class="section__header">
 <span class="section__tag" data-i18n="testimonials-tag">Client Love</span>
 <h2 class="section__title" data-i18n-html="testimonials-title">What They <span class="gradient-text">Say</span></h2>
-<p class="section__desc" data-i18n="testimonials-desc">Don't take our word for it — hear from our clients.</p>
+<p class="section__desc" data-i18n="testimonials-desc">Hear from our clients.</p>
 </div>
 <div class="testimonials__carousel" id="testimonialsCarousel">
-<div class="testimonial-card glass glass-accent active">
-<div class="testimonial-card__stars">★★★★★</div>
-<p class="testimonial-card__text" data-i18n="testimonial-1">"KobieAI transformed our customer support. Their chatbot handles 80% of inquiries autonomously."</p>
-<div class="testimonial-card__author"><span class="testimonial-card__name">Jessica Liu</span><span class="testimonial-card__role" data-i18n="testimonial-1-role">VP of Support, HealthFirst</span></div>
+<div class="testimonial-card active"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text" data-i18n="testimonial-1">"KobieAI transformed our support. Their chatbot handles 80% of inquiries autonomously."</p><div class="testimonial-card__author"><span class="testimonial-card__name">Jessica Liu</span><span class="testimonial-card__role" data-i18n="testimonial-1-role">VP of Support, HealthFirst</span></div></div>
+<div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text" data-i18n="testimonial-2">"The analytics dashboard is incredible. Real-time insights instantly."</p><div class="testimonial-card__author"><span class="testimonial-card__name">David Park</span><span class="testimonial-card__role" data-i18n="testimonial-2-role">COO, LogiTrans</span></div></div>
+<div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text" data-i18n="testimonial-3">"Professional, responsive, and technically outstanding."</p><div class="testimonial-card__author"><span class="testimonial-card__name">Amara Okafor</span><span class="testimonial-card__role" data-i18n="testimonial-3-role">CTO, FinVault</span></div></div>
 </div>
-<div class="testimonial-card glass glass-accent">
-<div class="testimonial-card__stars">★★★★★</div>
-<p class="testimonial-card__text" data-i18n="testimonial-2">"The analytics dashboard is incredible. Real-time insights that used to take a full day are now available instantly."</p>
-<div class="testimonial-card__author"><span class="testimonial-card__name">David Park</span><span class="testimonial-card__role" data-i18n="testimonial-2-role">COO, LogiTrans</span></div>
-</div>
-<div class="testimonial-card glass glass-accent">
-<div class="testimonial-card__stars">★★★★★</div>
-<p class="testimonial-card__text" data-i18n="testimonial-3">"Professional, responsive, and technically outstanding. KobieAI delivered ahead of schedule and under budget."</p>
-<div class="testimonial-card__author"><span class="testimonial-card__name">Amara Okafor</span><span class="testimonial-card__role" data-i18n="testimonial-3-role">CTO, FinVault</span></div>
-</div>
-</div>
-<div class="testimonials__dots" id="testimonialsDots">
-<span class="dot active" data-index="0"></span><span class="dot" data-index="1"></span><span class="dot" data-index="2"></span>
-</div>
+<div class="testimonials__dots" id="testimonialsDots"><span class="dot active" data-index="0"></span><span class="dot" data-index="1"></span><span class="dot" data-index="2"></span></div>
 </div>
 </section>
+
+<div class="section-divider"></div>
 
 <section class="section faq" id="faq">
 <div class="container">
-<div class="section__header">
-<span class="section__tag">FAQ</span>
-<h2 class="section__title" data-i18n-html="faq-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
-<p class="section__desc" data-i18n="faq-desc">Everything you need to know about working with KobieAI.</p>
-</div>
+<div class="section__header"><span class="section__tag">FAQ</span><h2 class="section__title" data-i18n-html="faq-title">Frequently Asked <span class="gradient-text">Questions</span></h2><p class="section__desc" data-i18n="faq-desc">Everything you need to know about working with KobieAI.</p></div>
 <div class="faq__list">
-<div class="faq-item glass glass-accent"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q1">How long does a typical project take?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a1">Most projects are delivered within 2-4 weeks, depending on complexity. We'll provide a detailed timeline during the initial consultation.</p></div></div>
-<div class="faq-item glass glass-accent"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q2">What technologies do you use?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a2">We work with the full modern AI stack: OpenAI, Anthropic Claude, Llama, LangChain, Hugging Face, TensorFlow, PyTorch, and more.</p></div></div>
-<div class="faq-item glass glass-accent"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q3">Do you offer ongoing support after delivery?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a3">Yes! All plans include post-delivery support. We offer ongoing maintenance and optimization packages.</p></div></div>
-<div class="faq-item glass glass-accent"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q4">Can you work with our existing data and systems?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a4">Absolutely. We integrate with your existing infrastructure — CRMs, databases, APIs, and legacy systems.</p></div></div>
-<div class="faq-item glass glass-accent"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q5">How do you handle data privacy and security?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a5">Security is paramount. We follow industry best practices: end-to-end encryption, SOC 2 compliance frameworks, and strict data handling agreements.</p></div></div>
+<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q1">How long does a typical project take?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a1">Most projects are delivered within 2-4 weeks, depending on complexity.</p></div></div>
+<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q2">What technologies do you use?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a2">We work with OpenAI, Anthropic Claude, Llama, LangChain, and more.</p></div></div>
+<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q3">Do you offer ongoing support?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a3">Yes! All plans include post-delivery support and maintenance packages.</p></div></div>
+<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q4">Can you work with our existing systems?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a4">Absolutely. We integrate with CRMs, databases, APIs, and legacy systems.</p></div></div>
+<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q5">How do you handle data privacy?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a5">End-to-end encryption, SOC 2 compliance, and strict data handling agreements.</p></div></div>
 </div>
 </div>
 </section>
 
+<div class="section-divider"></div>
+
 <section class="section contact" id="contact">
-<div class="orb orb--blue"></div>
-<div class="orb orb--purple"></div>
 <div class="container">
-<div class="section__header">
-<span class="section__tag" data-i18n="contact-tag">Get In Touch</span>
-<h2 class="section__title" data-i18n-html="contact-title">Let's Build Something <span class="gradient-text">Amazing</span></h2>
-<p class="section__desc" data-i18n="contact-desc">Ready to transform your business with AI? Drop us a message and we'll get back to you within 24 hours.</p>
-</div>
+<div class="section__header"><span class="section__tag" data-i18n="contact-tag">Get In Touch</span><h2 class="section__title" data-i18n-html="contact-title">Let's Build Something <span class="gradient-text">Amazing</span></h2><p class="section__desc" data-i18n="contact-desc">Drop us a message and we'll get back to you within 24 hours.</p></div>
 <div class="contact__content">
-<form class="contact__form glass glass-accent" id="contactForm" action="https://formsubmit.co/jaku.kobierski@gmail.com" method="POST" novalidate>
-<input type="hidden" name="_subject" value="New KobieAI Contact">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
+<form class="contact__form" id="contactForm" action="https://formsubmit.co/jaku.kobierski@gmail.com" method="POST" novalidate>
+<input type="hidden" name="_subject" value="New KobieAI Contact"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
 <div class="form__group"><label for="name" class="form__label" data-i18n="form-name-label">Your Name</label><input type="text" id="name" name="name" class="form__input" data-i18n-placeholder="form-name-placeholder" placeholder="John Doe" required><span class="form__error" data-for="name"></span></div>
 <div class="form__group"><label for="email" class="form__label" data-i18n="form-email-label">Email Address</label><input type="email" id="email" name="email" class="form__input" data-i18n-placeholder="form-email-placeholder" placeholder="john@example.com" required><span class="form__error" data-for="email"></span></div>
-<div class="form__group"><label for="message" class="form__label" data-i18n="form-msg-label">Tell Us About Your Project</label><textarea id="message" name="message" class="form__input form__textarea" data-i18n-placeholder="form-msg-placeholder" placeholder="Describe your project, goals, and timeline..." rows="5" required></textarea><span class="form__error" data-for="message"></span></div>
+<div class="form__group"><label for="message" class="form__label" data-i18n="form-msg-label">Tell Us About Your Project</label><textarea id="message" name="message" class="form__input form__textarea" data-i18n-placeholder="form-msg-placeholder" placeholder="Describe your project..." rows="5" required></textarea><span class="form__error" data-for="message"></span></div>
 <button type="submit" class="btn btn--primary btn--full btn--lg" data-i18n="form-submit">Send Message</button>
 </form>
 <div class="contact__info">
-<div class="contact-info-item glass glass-accent"><span class="contact-info-item__icon">📍</span><div><span class="contact-info-item__label" data-i18n="contact-location-label">Location</span><span class="contact-info-item__value" data-i18n="contact-location-value">Czech Republic</span></div></div>
-<div class="contact-info-item glass glass-accent"><span class="contact-info-item__icon">💬</span><div><span class="contact-info-item__label" data-i18n="contact-response-label">Response Time</span><span class="contact-info-item__value" data-i18n="contact-response-value">Within 24 hours</span></div></div>
+<div class="contact-info-item"><span class="contact-info-item__icon">&#x1F4CD;</span><div><span class="contact-info-item__label" data-i18n="contact-location-label">Location</span><span class="contact-info-item__value" data-i18n="contact-location-value">Czech Republic</span></div></div>
+<div class="contact-info-item"><span class="contact-info-item__icon">&#x1F4AC;</span><div><span class="contact-info-item__label" data-i18n="contact-response-label">Response Time</span><span class="contact-info-item__value" data-i18n="contact-response-value">Within 24 hours</span></div></div>
 </div>
 </div>
 </div>
@@ -500,48 +565,122 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <footer class="footer">
 <div class="container footer__inner">
-<div class="footer__brand">
-<a href="#hero" class="nav__logo">Kobie<span class="accent">AI</span></a>
-<p class="footer__desc" data-i18n="footer-desc">Building smarter AI solutions for forward-thinking businesses.</p>
-</div>
+<div class="footer__brand"><a href="#hero" class="nav__logo">Kobie<span>AI</span></a><p class="footer__desc" data-i18n="footer-desc">Building smarter AI solutions.</p></div>
 <div class="footer__links">
 <div class="footer__col"><h4 data-i18n="footer-col-services">Services</h4><a href="#services" data-i18n="footer-svc-automation">AI Automation</a><a href="#services" data-i18n="footer-svc-chatbots">Smart Chatbots</a><a href="#services" data-i18n="footer-svc-analytics">Data Analytics</a></div>
 <div class="footer__col"><h4 data-i18n="footer-col-company">Company</h4><a href="#about" data-i18n="nav-about">About</a><a href="#team" data-i18n="nav-team">Team</a><a href="#portfolio" data-i18n="nav-portfolio">Portfolio</a><a href="#casestudies" data-i18n="nav-casestudies">Case Studies</a></div>
-<div class="footer__col"><h4 data-i18n="footer-col-support">Support</h4><a href="#faq" data-i18n="nav-faq">FAQ</a><a href="#contact" data-i18n="nav-contact">Contact</a><a href="#" data-i18n="footer-privacy">Privacy Policy</a><a href="https://www.instagram.com/kobieai/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+<div class="footer__col"><h4 data-i18n="footer-col-support">Support</h4><a href="#faq" data-i18n="nav-faq">FAQ</a><a href="#contact" data-i18n="nav-contact">Contact</a><a href="#" data-i18n="footer-privacy">Privacy</a><a href="https://www.instagram.com/kobieai/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
 </div>
 </div>
 <div class="container footer__bottom"><p data-i18n-html="footer-copyright">&copy; 2026 KobieAI. All rights reserved.</p></div>
 </footer>
 
+<button class="back-to-top" id="backToTop">&#8593;</button>
+
 <script>
-var translations={en:{'nav-services':'Services','nav-about':'About','nav-portfolio':'Portfolio','nav-casestudies':'Case Studies','nav-team':'Team','nav-testimonials':'Testimonials','nav-faq':'FAQ','nav-contact':'Contact','nav-cta':'Get Started','hero-title':'Build Smarter <span class="gradient-text">with AI</span>','hero-sub':'KobieAI delivers cutting-edge artificial intelligence solutions — from intelligent automation and custom chatbots to advanced data analytics.','hero-cta-start':'Get Started','hero-cta-learn':'Learn More','hero-stat-projects':'Projects Delivered','hero-stat-clients':'Happy Clients','hero-stat-uptime':'Uptime Guarantee','services-tag':'What We Do','services-title':'Our <span class="gradient-text">Services</span>','services-desc':'We architect and deploy AI solutions that drive real business outcomes.','services-card1-title':'AI Automation','services-card1-desc':'Automate repetitive workflows, reduce operational overhead, and let your team focus on what matters most.','services-card1-f1':'Workflow automation','services-card1-f2':'Document intelligence','services-card1-f3':'Process optimization','services-card2-title':'Smart Chatbots','services-card2-desc':'Custom conversational AI agents trained on your data. Handle support, lead generation, and internal queries with 24/7 availability.','services-card2-f1':'Custom LLM chatbots','services-card2-f2':'RAG-powered answers','services-card2-f3':'Multi-channel deployment','services-card3-title':'Data Analytics','services-card3-desc':'Turn raw data into actionable insights. We build custom dashboards, predictive models, and reporting pipelines.','services-card3-f1':'Predictive analytics','services-card3-f2':'Real-time dashboards','services-card3-f3':'Data pipeline engineering','about-tag':'Who We Are','about-title':'About <span class="gradient-text">KobieAI</span>','about-desc':'We\'re a team of AI engineers, data scientists, and product thinkers on a mission to make artificial intelligence accessible for every business.','about-p1':'Founded in 2024, KobieAI started with a simple belief: AI shouldn\'t be reserved for Fortune 500 companies.','about-p2':'Our team has shipped over 150 AI projects across finance, healthcare, e-commerce, and logistics.','about-mantra':'<span class="gradient-text">Our mantra:</span> Build smart. Ship fast. Deliver value.','about-stat-projects':'Projects','about-stat-clients':'Clients','about-stat-team':'Founders','about-stat-uptime':'Uptime','portfolio-tag':'Our Work','portfolio-title':'Featured <span class="gradient-text">Projects</span>','portfolio-desc':'Real solutions, real results.','portfolio-card1-desc':'AI-powered quality control — 76% fewer defects, 35% less downtime.','portfolio-card2-desc':'Predictive analytics for retail — 28% less waste, 15% revenue uplift.','portfolio-card3-desc':'AI medical document processing — 82% faster.','portfolio-card4-desc':'Route optimization — 22% fuel reduction.','portfolio-tag-healthcare':'Healthcare','portfolio-tag-analytics':'Analytics','portfolio-tag-realtime':'Real-time','portfolio-tag-mfg':'Manufacturing','portfolio-tag-automation':'Automation','portfolio-tag-retail':'Retail','portfolio-tag-logistics':'Logistics','portfolio-tag-optimization':'Optimization','casestudies-tag':'Case Studies','casestudies-title':'Real Impact, <span class="gradient-text">Real Stories</span>','casestudies-desc':'Deep dives into how KobieAI transformed businesses.','cs-label-challenge':'The Challenge','cs-label-solution':'Our Solution','cs-cta-title':'Ready to Transform <span class="gradient-text">Your Business</span>?','cs-cta-desc':'Let\'s discuss how KobieAI can solve your biggest challenges.','cs-cta-btn':'Start the Conversation','cs-nordi-industry':'Manufacturing','cs-nordi-subtitle':'AI-driven quality control and production optimization','cs-nordi-challenge':'NordiTech struggled with a 12% defect rate in their production line.','cs-nordi-solution':'We deployed a computer vision system across 6 production lines.','cs-nordi-r1':'Fewer Defects','cs-nordi-r2':'Less Downtime','cs-nordi-r3':'Annual Savings','cs-greenleaf-industry':'Retail','cs-greenleaf-subtitle':'Predictive analytics and demand forecasting','cs-greenleaf-challenge':'GreenLeaf was losing millions to overstocking and waste.','cs-greenleaf-solution':'We built a custom ML forecasting engine ingesting 3 years of sales data.','cs-greenleaf-r1':'Less Waste','cs-greenleaf-r2':'Revenue Uplift','cs-greenleaf-r3':'Annual Savings','cs-aero-industry':'Logistics','cs-aero-subtitle':'Real-time route optimization and fleet management','cs-aero-challenge':'AeroLogis had 18% fuel waste from manual route planning.','cs-aero-solution':'We deployed a real-time route optimization engine.','cs-aero-r1':'Fuel Reduction','cs-aero-r2':'Faster Deliveries','cs-aero-r3':'Annual Savings','team-tag':'Our People','team-title':'Meet the <span class="gradient-text">Team</span>','team-desc':'The founders behind KobieAI.','team-jakub-bio':'AI engineer with deep expertise in large language models, automation pipelines, and production-grade AI systems.','team-matyas-bio':'AI specialist focused on conversational agents, data analytics, and scalable AI infrastructure.','testimonials-tag':'Client Love','testimonials-title':'What They <span class="gradient-text">Say</span>','testimonials-desc':'Hear from our clients.','testimonial-1':'"KobieAI transformed our support. Their chatbot handles 80% of inquiries autonomously."','testimonial-1-role':'VP of Support, HealthFirst','testimonial-2':'"The analytics dashboard is incredible. Real-time insights instantly."','testimonial-2-role':'COO, LogiTrans','testimonial-3':'"Professional, responsive, and technically outstanding."','testimonial-3-role':'CTO, FinVault','faq-title':'Frequently Asked <span class="gradient-text">Questions</span>','faq-desc':'Everything you need to know about working with KobieAI.','faq-q1':'How long does a typical project take?','faq-a1':'Most projects are delivered within 2-4 weeks, depending on complexity.','faq-q2':'What technologies do you use?','faq-a2':'We work with OpenAI, Anthropic Claude, Llama, LangChain, Hugging Face, TensorFlow, PyTorch, and more.','faq-q3':'Do you offer ongoing support?','faq-a3':'Yes! All plans include post-delivery support and maintenance packages.','faq-q4':'Can you work with our existing systems?','faq-a4':'Absolutely. We integrate with CRMs, databases, APIs, and legacy systems.','faq-q5':'How do you handle data privacy?','faq-a5':'End-to-end encryption, SOC 2 compliance, and strict data handling agreements.','contact-tag':'Get In Touch','contact-title':'Let\'s Build Something <span class="gradient-text">Amazing</span>','contact-desc':'Drop us a message and we\'ll get back to you within 24 hours.','form-name-label':'Your Name','form-name-placeholder':'John Doe','form-email-label':'Email Address','form-email-placeholder':'john@example.com','form-msg-label':'Tell Us About Your Project','form-msg-placeholder':'Describe your project, goals, and timeline...','form-submit':'Send Message','contact-location-label':'Location','contact-location-value':'Czech Republic','contact-response-label':'Response Time','contact-response-value':'Within 24 hours','footer-desc':'Building smarter AI solutions for forward-thinking businesses.','footer-col-services':'Services','footer-col-company':'Company','footer-col-support':'Support','footer-svc-automation':'AI Automation','footer-svc-chatbots':'Smart Chatbots','footer-svc-analytics':'Data Analytics','footer-privacy':'Privacy Policy','footer-copyright':'&copy; 2026 KobieAI. All rights reserved.','form-err-name-required':'Name is required','form-err-name-min':'Name must be at least 2 characters','form-err-email-required':'Email is required','form-err-email-invalid':'Please enter a valid email','form-err-msg-required':'Message is required','form-err-msg-min':'Please provide more detail (min 10 characters)','form-success':'Message Sent!'},cs:{'nav-services':'Služby','nav-about':'O nás','nav-portfolio':'Portfolio','nav-casestudies':'Případové studie','nav-team':'Tým','nav-testimonials':'Reference','nav-faq':'FAQ','nav-contact':'Kontakt','nav-cta':'Začít','hero-title':'Budujte chytřeji <span class="gradient-text">s AI</span>','hero-sub':'KobieAI přináší špičková řešení v oblasti umělé inteligence.','hero-cta-start':'Začít','hero-cta-learn':'Zjistit více','hero-stat-projects':'Dokončených projektů','hero-stat-clients':'Spokojení klienti','hero-stat-uptime':'Záruka dostupnosti','services-tag':'Co děláme','services-title':'Naše <span class="gradient-text">služby</span>','services-desc':'Navrhujeme a nasazujeme AI řešení, která přinášejí reálné obchodní výsledky.','services-card1-title':'AI Automatizace','services-card1-desc':'Automatizujte opakující se pracovní postupy.','services-card1-f1':'Automatizace workflow','services-card1-f2':'Zpracování dokumentů','services-card1-f3':'Optimalizace procesů','services-card2-title':'Chytří chatboti','services-card2-desc':'Vlastní konverzační AI agenti trénovaní na vašich datech.','services-card2-f1':'Vlastní LLM chatboti','services-card2-f2':'Odpovědi s RAG','services-card2-f3':'Vícekanálové nasazení','services-card3-title':'Datová analytika','services-card3-desc':'Promeňte surová data v užitečné informace.','services-card3-f1':'Prediktivní analytika','services-card3-f2':'Realtime dashboardy','services-card3-f3':'Datové pipeline','about-tag':'Kdo jsme','about-title':'O <span class="gradient-text">KobieAI</span>','about-desc':'Jsme tým AI inženýrů, datových vědců a produktových myslitelů.','about-p1':'KobieAI byla založena v roce 2024 s jednoduchým přesvědčením.','about-p2':'Náš tým dodal více než 150 AI projektů.','about-mantra':'<span class="gradient-text">Naše motto:</span> Stavět chytře. Dodávat rychle. Přinášet hodnotu.','about-stat-projects':'Projektů','about-stat-clients':'Klientů','about-stat-team':'Zakladatelé','about-stat-uptime':'Dostupnost','portfolio-tag':'Naše práce','portfolio-title':'Reference <span class="gradient-text">projektů</span>','portfolio-desc':'Reálná řešení, reálné výsledky.','portfolio-card1-desc':'Kontrola kvality s AI — o 76 % méně vad.','portfolio-card2-desc':'Prediktivní analytika — o 28 % méně odpadu.','portfolio-card3-desc':'AI zpracování dokumentace — o 82 % rychlejší.','portfolio-card4-desc':'Optimalizace tras — 22% snížení paliva.','portfolio-tag-healthcare':'Zdravotnictví','portfolio-tag-analytics':'Analytika','portfolio-tag-realtime':'Reálný čas','portfolio-tag-mfg':'Výroba','portfolio-tag-automation':'Automatizace','portfolio-tag-retail':'Maloobchod','portfolio-tag-logistics':'Logistika','portfolio-tag-optimization':'Optimalizace','casestudies-tag':'Case Studies','casestudies-title':'Reálný dopad, <span class="gradient-text">reálné příběhy</span>','casestudies-desc':'Detailní pohled na transformaci firem s KobieAI.','cs-label-challenge':'Výzva','cs-label-solution':'Naše řešení','cs-cta-title':'Připraveni transformovat <span class="gradient-text">své podnikání</span>?','cs-cta-desc':'Prodiskutujme vaše největší výzvy.','cs-cta-btn':'Zahájit konverzaci','cs-nordi-industry':'Výroba','cs-nordi-subtitle':'Kontrola kvality s AI','cs-nordi-challenge':'NordiTech bojoval s 12% mírou vad.','cs-nordi-solution':'Nasazení počítačového vidění na 6 linkách.','cs-nordi-r1':'Méně vad','cs-nordi-r2':'Méně prostojů','cs-nordi-r3':'Roční úspora','cs-greenleaf-industry':'Maloobchod','cs-greenleaf-subtitle':'Prediktivní analytika','cs-greenleaf-challenge':'GreenLeaf přicházel o miliony kvůli odpadu.','cs-greenleaf-solution':'Vlastní ML forecasting engine.','cs-greenleaf-r1':'Méně odpadu','cs-greenleaf-r2':'Nárůst tržeb','cs-greenleaf-r3':'Roční úspora','cs-aero-industry':'Logistika','cs-aero-subtitle':'Optimalizace tras v reálném čase','cs-aero-challenge':'18% plýtvání paliva kvůli manuálnímu plánování.','cs-aero-solution':'Engine pro optimalizaci tras v reálném čase.','cs-aero-r1':'Snížení paliva','cs-aero-r2':'Rychlejší doručení','cs-aero-r3':'Roční úspora','team-tag':'Náš tým','team-title':'Poznejte <span class="gradient-text">tým</span>','team-desc':'Zakladatelé KobieAI.','team-jakub-bio':'AI inženýr s hlubokými znalostmi LLM a automatizace.','team-matyas-bio':'AI specialista na konverzační agenty a datovou analytiku.','testimonials-tag':'Reference','testimonials-title':'Co <span class="gradient-text">říkají</span>','testimonials-desc':'Poslechněte si naše klienty.','testimonial-1':'„KobieAI proměnila naši podporu. Chatbot zvládá 80 % dotazů.“','testimonial-1-role':'VP podpory, HealthFirst','testimonial-2':'„Dashboard je neuvěřitelný. Statistiky v reálném čase.“','testimonial-2-role':'COO, LogiTrans','testimonial-3':'„Profesionální a technicky vynikající.“','testimonial-3-role':'CTO, FinVault','faq-title':'Často kladené <span class="gradient-text">otázky</span>','faq-desc':'Vše o spolupráci s KobieAI.','faq-q1':'Jak dlouho projekt trvá?','faq-a1':'Většina projektů je dodána během 2–4 týdnů.','faq-q2':'Jaké technologie používáte?','faq-a2':'OpenAI, Claude, Llama, LangChain, TensorFlow a další.','faq-q3':'Poskytujete podporu po dodání?','faq-a3':'Ano! Všechny plány zahrnují podporu.','faq-q4':'Můžete pracovat s našimi systémy?','faq-a4':'Ano, integrujeme se s CRM, databázemi a API.','faq-q5':'Jak chráníte data?','faq-a5':'End-to-end šifrování, SOC 2 compliance.','contact-tag':'Kontaktujte nás','contact-title':'Pojďme vytvořit něco <span class="gradient-text">úžasného</span>','contact-desc':'Napište nám a ozveme se do 24 hodin.','form-name-label':'Vaše jméno','form-name-placeholder':'Jan Novák','form-email-label':'E-mail','form-email-placeholder':'jan@example.com','form-msg-label':'Popište nám svůj projekt','form-msg-placeholder':'Popište projekt, cíle a harmonogram...','form-submit':'Odeslat zprávu','contact-location-label':'Lokalita','contact-location-value':'Česká republika','contact-response-label':'Doba odezvy','contact-response-value':'Do 24 hodin','footer-desc':'Budujeme chytřejší AI řešení.','footer-col-services':'Služby','footer-col-company':'Společnost','footer-col-support':'Podpora','footer-svc-automation':'AI Automatizace','footer-svc-chatbots':'Chytří chatboti','footer-svc-analytics':'Datová analytika','footer-privacy':'Zásady ochrany','footer-copyright':'&copy; 2026 KobieAI. Všechna práva vyhrazena.','form-err-name-required':'Jméno je povinné','form-err-name-min':'Minimálně 2 znaky','form-err-email-required':'E-mail je povinný','form-err-email-invalid':'Zadejte platný e-mail','form-err-msg-required':'Zpráva je povinná','form-err-msg-min':'Více podrobností (min 10 znaků)','form-success':'Zpráva odeslána!'}};
+/* ===== TRANSLATIONS ===== */
+var translations={en:{'nav-services':'Services','nav-about':'About','nav-portfolio':'Portfolio','nav-casestudies':'Case Studies','nav-team':'Team','nav-testimonials':'Testimonials','nav-faq':'FAQ','nav-contact':'Contact','nav-cta':'Get Started','hero-sub':'KobieAI delivers cutting-edge AI solutions — from intelligent automation and custom chatbots to advanced data analytics.','hero-cta-start':'Get Started','hero-cta-learn':'Learn More','hero-stat-projects':'Projects Delivered','hero-stat-clients':'Happy Clients','hero-stat-uptime':'Uptime Guarantee','services-tag':'What We Do','services-title':'Our <span class="gradient-text">Services</span>','services-desc':'We architect and deploy AI solutions.','services-card1-title':'AI Automation','services-card1-desc':'Automate repetitive workflows, reduce overhead, and let your team focus on what matters.','services-card1-f1':'Workflow automation','services-card1-f2':'Document intelligence','services-card1-f3':'Process optimization','services-card2-title':'Smart Chatbots','services-card2-desc':'Custom conversational AI agents trained on your data. Handle support, lead generation, and internal queries 24/7.','services-card2-f1':'Custom LLM chatbots','services-card2-f2':'RAG-powered answers','services-card2-f3':'Multi-channel deployment','services-card3-title':'Data Analytics','services-card3-desc':'Turn raw data into actionable insights. Custom dashboards, predictive models, and reporting pipelines.','services-card3-f1':'Predictive analytics','services-card3-f2':'Real-time dashboards','services-card3-f3':'Data pipeline engineering','about-tag':'Who We Are','about-title':'About <span class="gradient-text">KobieAI</span>','about-desc':'We make AI accessible for every business.','about-p1':'Founded in 2024, KobieAI started with a simple belief: AI shouldn\'t be reserved for Fortune 500 companies.','about-p2':'Our team has shipped over 150 AI projects across finance, healthcare, e-commerce, and logistics.','about-mantra':'<span class="gradient-text">Our mantra:</span> Build smart. Ship fast. Deliver value.','about-stat-projects':'Projects','about-stat-clients':'Clients','about-stat-team':'Founders','about-stat-uptime':'Uptime','portfolio-tag':'Our Work','portfolio-title':'Featured <span class="gradient-text">Projects</span>','portfolio-desc':'Real solutions, real results.','portfolio-card1-desc':'AI quality control — 76% fewer defects.','portfolio-card2-desc':'Predictive analytics — 28% less waste.','portfolio-card3-desc':'AI document processing — 82% faster.','portfolio-card4-desc':'Route optimization — 22% fuel reduction.','portfolio-tag-healthcare':'Healthcare','portfolio-tag-analytics':'Analytics','portfolio-tag-realtime':'Real-time','portfolio-tag-mfg':'Manufacturing','portfolio-tag-automation':'Automation','portfolio-tag-retail':'Retail','portfolio-tag-logistics':'Logistics','portfolio-tag-optimization':'Optimization','casestudies-tag':'Case Studies','casestudies-title':'Real Impact, <span class="gradient-text">Real Stories</span>','casestudies-desc':'Deep dives into our work.','cs-label-challenge':'The Challenge','cs-label-solution':'Our Solution','cs-cta-title':'Ready to Transform <span class="gradient-text">Your Business</span>?','cs-cta-desc':'Let\'s discuss how KobieAI can solve your biggest challenges.','cs-cta-btn':'Start the Conversation','cs-nordi-industry':'Manufacturing','cs-nordi-subtitle':'AI quality control','cs-nordi-challenge':'NordiTech struggled with a 12% defect rate.','cs-nordi-solution':'Computer vision across 6 production lines.','cs-nordi-r1':'Fewer Defects','cs-nordi-r2':'Less Downtime','cs-nordi-r3':'Annual Savings','cs-greenleaf-industry':'Retail','cs-greenleaf-subtitle':'Demand forecasting','cs-greenleaf-challenge':'GreenLeaf lost millions to overstocking.','cs-greenleaf-solution':'Custom ML forecasting engine.','cs-greenleaf-r1':'Less Waste','cs-greenleaf-r2':'Revenue Uplift','cs-greenleaf-r3':'Annual Savings','cs-aero-industry':'Logistics','cs-aero-subtitle':'Route optimization','cs-aero-challenge':'AeroLogis had 18% fuel waste.','cs-aero-solution':'Real-time route optimization.','cs-aero-r1':'Fuel Reduction','cs-aero-r2':'Faster Deliveries','cs-aero-r3':'Annual Savings','team-tag':'Our People','team-title':'Meet the <span class="gradient-text">Team</span>','team-desc':'The founders behind KobieAI.','team-jakub-bio':'AI engineer with deep expertise in LLMs and automation.','team-matyas-bio':'AI specialist in conversational agents and analytics.','testimonials-tag':'Client Love','testimonials-title':'What They <span class="gradient-text">Say</span>','testimonials-desc':'Hear from our clients.','testimonial-1':'"KobieAI transformed our support. Their chatbot handles 80% of inquiries."','testimonial-1-role':'VP of Support, HealthFirst','testimonial-2':'"The analytics dashboard is incredible."','testimonial-2-role':'COO, LogiTrans','testimonial-3':'"Professional, responsive, and outstanding."','testimonial-3-role':'CTO, FinVault','faq-title':'FAQs <span class="gradient-text">Questions</span>','faq-desc':'Everything about working with KobieAI.','faq-q1':'How long does a typical project take?','faq-a1':'2-4 weeks depending on complexity.','faq-q2':'What technologies do you use?','faq-a2':'OpenAI, Claude, Llama, LangChain and more.','faq-q3':'Do you offer ongoing support?','faq-a3':'Yes! Post-delivery support included.','faq-q4':'Can you work with our existing systems?','faq-a4':'Absolutely. We integrate with everything.','faq-q5':'How do you handle data privacy?','faq-a5':'End-to-end encryption, SOC 2 compliance.','contact-tag':'Get In Touch','contact-title':'Let\'s Build <span class="gradient-text">Something Amazing</span>','contact-desc':'We\'ll get back within 24 hours.','form-name-label':'Your Name','form-name-placeholder':'John Doe','form-email-label':'Email','form-email-placeholder':'john@example.com','form-msg-label':'Your Project','form-msg-placeholder':'Describe your project...','form-submit':'Send Message','contact-location-label':'Location','contact-location-value':'Czech Republic','contact-response-label':'Response','contact-response-value':'Within 24 hours','footer-desc':'Building smarter AI solutions.','footer-col-services':'Services','footer-col-company':'Company','footer-col-support':'Support','footer-svc-automation':'AI Automation','footer-svc-chatbots':'Smart Chatbots','footer-svc-analytics':'Data Analytics','footer-privacy':'Privacy','footer-copyright':'&copy; 2026 KobieAI.','form-err-name-required':'Required','form-err-name-min':'Min 2 characters','form-err-email-required':'Required','form-err-email-invalid':'Invalid email','form-err-msg-required':'Required','form-err-msg-min':'Min 10 characters','form-success':'Sent!'},cs:{'nav-services':'Služby','nav-about':'O nás','nav-portfolio':'Portfolio','nav-casestudies':'Případové studie','nav-team':'Tým','nav-testimonials':'Reference','nav-faq':'FAQ','nav-contact':'Kontakt','nav-cta':'Začít','hero-sub':'KobieAI přináší špičková řešení v oblasti AI.','hero-cta-start':'Začít','hero-cta-learn':'Zjistit více','hero-stat-projects':'Projektů','hero-stat-clients':'Klientů','hero-stat-uptime':'Dostupnost','services-tag':'Co děláme','services-title':'Naše <span class="gradient-text">služby</span>','services-desc':'Navrhujeme a nasazujeme AI řešení.','services-card1-title':'AI Automatizace','services-card1-desc':'Automatizujte opakující se úkoly.','services-card1-f1':'Automatizace workflow','services-card1-f2':'Zpracování dokumentů','services-card1-f3':'Optimalizace procesů','services-card2-title':'Chytří chatboti','services-card2-desc':'Vlastní konverzační AI agenti.','services-card2-f1':'Vlastní LLM chatboti','services-card2-f2':'Odpovědi s RAG','services-card2-f3':'Multi-channel','services-card3-title':'Datová analytika','services-card3-desc':'Promeňte data v užitečné informace.','services-card3-f1':'Prediktivní analytika','services-card3-f2':'Realtime dashboardy','services-card3-f3':'Datové pipeline','about-tag':'Kdo jsme','about-title':'O <span class="gradient-text">KobieAI</span>','about-desc':'AI dostupná pro každého.','about-p1':'KobieAI byla založena v 2024.','about-p2':'Přes 150 AI projektů.','about-mantra':'<span class="gradient-text">Naše motto:</span> Stavět chytře.','about-stat-projects':'Projektů','about-stat-clients':'Klientů','about-stat-team':'Zakladatelé','about-stat-uptime':'Dostupnost','portfolio-tag':'Naše práce','portfolio-title':'<span class="gradient-text">Projekty</span>','portfolio-desc':'Reálná řešení.','portfolio-card1-desc':'AI kontrola kvality — -76% vad.','portfolio-card2-desc':'Prediktivní analytika — -28% odpadu.','portfolio-card3-desc':'AI zpracování dokumentů — +82% rychlost.','portfolio-card4-desc':'Optimalizace tras — -22% paliva.','portfolio-tag-healthcare':'Zdravotnictví','portfolio-tag-analytics':'Analytika','portfolio-tag-realtime':'Reálný čas','portfolio-tag-mfg':'Výroba','portfolio-tag-automation':'Automatizace','portfolio-tag-retail':'Maloobchod','portfolio-tag-logistics':'Logistika','portfolio-tag-optimization':'Optimalizace','casestudies-tag':'Case Studies','casestudies-title':'Reálný dopad, <span class="gradient-text">reálné příběhy</span>','casestudies-desc':'Detailní pohled na naši práci.','cs-label-challenge':'Výzva','cs-label-solution':'Řešení','cs-cta-title':'Připraveni <span class="gradient-text">začít</span>?','cs-cta-desc':'Prodiskutujme vaše výzvy.','cs-cta-btn':'Kontaktujte nás','cs-nordi-industry':'Výroba','cs-nordi-subtitle':'AI kontrola kvality','cs-nordi-challenge':'12% míra vad.','cs-nordi-solution':'Počítačové vidění na 6 linkách.','cs-nordi-r1':'Méně vad','cs-nordi-r2':'Méně prostojů','cs-nordi-r3':'Roční úspora','cs-greenleaf-industry':'Maloobchod','cs-greenleaf-subtitle':'Forecasting','cs-greenleaf-challenge':'Milionové ztráty z přezásobení.','cs-greenleaf-solution':'ML forecasting engine.','cs-greenleaf-r1':'Méně odpadu','cs-greenleaf-r2':'Nárůst tržeb','cs-greenleaf-r3':'Roční úspora','cs-aero-industry':'Logistika','cs-aero-subtitle':'Optimalizace tras','cs-aero-challenge':'18% plýtvání paliva.','cs-aero-solution':'Optimalizace v reálném čase.','cs-aero-r1':'Méně paliva','cs-aero-r2':'Rychlejší doručení','cs-aero-r3':'Roční úspora','team-tag':'Náš tým','team-title':'Poznejte <span class="gradient-text">tým</span>','team-desc':'Zakladatelé.','team-jakub-bio':'AI inženýr, expert na LLM.','team-matyas-bio':'Specialista na AI agenty.','testimonials-tag':'Reference','testimonials-title':'Co <span class="gradient-text">říkají</span>','testimonials-desc':'Názory klientů.','testimonial-1':'„KobieAI proměnila naši podporu.“','testimonial-1-role':'VP podpory, HealthFirst','testimonial-2':'„Dashboard je neuvěřitelný.“','testimonial-2-role':'COO, LogiTrans','testimonial-3':'„Profesionální a vynikající.“','testimonial-3-role':'CTO, FinVault','faq-title':'<span class="gradient-text">FAQ</span>','faq-desc':'Vše o spolupráci.','faq-q1':'Jak dlouho projekt trvá?','faq-a1':'2-4 týdny.','faq-q2':'Jaké technologie?','faq-a2':'OpenAI, Claude, Llama a další.','faq-q3':'Podpora po dodání?','faq-a3':'Ano!','faq-q4':'Práce s našimi systémy?','faq-a4':'Ano, integrujeme se.','faq-q5':'Ochrana dat?','faq-a5':'Šifrování, SOC 2.','contact-tag':'Kontakt','contact-title':'Pojďme <span class="gradient-text">tvořit</span>','contact-desc':'Ozveme se do 24 hodin.','form-name-label':'Jméno','form-name-placeholder':'Jan Novák','form-email-label':'E-mail','form-email-placeholder':'jan@example.com','form-msg-label':'Projekt','form-msg-placeholder':'Popište projekt...','form-submit':'Odeslat','contact-location-label':'Lokalita','contact-location-value':'ČR','contact-response-label':'Odezva','contact-response-value':'Do 24 hodin','footer-desc':'Chytřejší AI řešení.','footer-col-services':'Služby','footer-col-company':'Firma','footer-col-support':'Podpora','footer-svc-automation':'AI Automatizace','footer-svc-chatbots':'Chatboti','footer-svc-analytics':'Analytika','footer-privacy':'Soukromí','footer-copyright':'&copy; 2026 KobieAI.','form-err-name-required':'Povinné','form-err-name-min':'Min 2 znaky','form-err-email-required':'Povinné','form-err-email-invalid':'Neplatný e-mail','form-err-msg-required':'Povinné','form-err-msg-min':'Min 10 znaků','form-success':'Odesláno!'}};
 var currentLang=localStorage.getItem('kobieai-lang')||'en';
 var formMsgs={};
 function updateFormMsgs(l){var t=translations[l];formMsgs={name:{required:t['form-err-name-required'],min:t['form-err-name-min']},email:{required:t['form-err-email-required'],invalid:t['form-err-email-invalid']},message:{required:t['form-err-msg-required'],min:t['form-err-msg-min']},success:t['form-success']}}
 function translatePage(l){var t=translations[l];document.querySelectorAll('[data-i18n]').forEach(function(e){var k=e.dataset.i18n;if(t[k]!==undefined)e.textContent=t[k]});document.querySelectorAll('[data-i18n-html]').forEach(function(e){var k=e.dataset.i18nHtml;if(t[k]!==undefined)e.innerHTML=t[k]});document.querySelectorAll('[data-i18n-placeholder]').forEach(function(e){var k=e.dataset.i18nPlaceholder;if(t[k]!==undefined)e.placeholder=t[k]});document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.lang===l)});updateFormMsgs(l);currentLang=l;localStorage.setItem('kobieai-lang',l)}
 updateFormMsgs(currentLang);translatePage(currentLang);
 document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){translatePage(b.dataset.lang)})});
-if(window.location.search.indexOf('sent=true')>-1){var b=document.createElement('div');b.className='success-banner';b.textContent='✓ '+formMsgs.success;document.body.appendChild(b);window.history.replaceState({},'',window.location.pathname);setTimeout(function(){b.classList.add('fade-out');setTimeout(function(){b.remove()},500)},4000)}
+if(window.location.search.indexOf('sent=true')>-1){var banner=document.createElement('div');banner.style.cssText='position:fixed;top:24px;left:50%;transform:translateX(-50%);z-index:9999;padding:16px 32px;background:#fff;color:#000;font-weight:600;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.4);animation:fadeInUp .4s ease-out';banner.textContent='✓ '+formMsgs.success;document.body.appendChild(banner);window.history.replaceState({},'',window.location.pathname);setTimeout(function(){banner.style.opacity='0';banner.style.transition='opacity .4s';setTimeout(function(){banner.remove()},500)},4000)}
+
+/* ===== SCROLL PROGRESS ===== */
+var sp=document.getElementById('scrollProgress');
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;sp.style.width=(window.scrollY/h*100)+'%'},{passive:true});
+
+/* ===== CUSTOM CURSOR ===== */
+var cursor=document.getElementById('cursor'),cursorDot=document.getElementById('cursorDot');
+var cx=0,cy=0,dx=0,dy=0;
+document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;cursorDot.style.left=cx+'px';cursorDot.style.top=cy+'px'});
+document.querySelectorAll('a,.btn,.dot,.faq-item__question,.nav__hamburger,.lang-btn').forEach(function(el){el.addEventListener('mouseenter',function(){cursor.classList.add('hover')});el.addEventListener('mouseleave',function(){cursor.classList.remove('hover')})});
+function cursorSmooth(){dx+=(cx-dx)*.12;dy+=(cy-dy)*.12;cursor.style.left=dx+'px';cursor.style.top=dy+'px';requestAnimationFrame(cursorSmooth)}
+cursorSmooth();
+
+/* ===== PARTICLES ===== */
+var canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
+var particles=[];
+function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+resizeCanvas();window.addEventListener('resize',resizeCanvas);
+for(var i=0;i<80;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,s:Math.random()*1.2+.5,o:Math.random()*.25+.05})}
+function animateParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<particles.length;i++){var p=particles[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+p.o+')';ctx.fill();for(var j=i+1;j<particles.length;j++){var q=particles[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<100&&dist>0){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba(255,255,255,'+(.06*(1-dist/100))+')';ctx.stroke()}}}requestAnimationFrame(animateParticles)}
+animateParticles();
+
+/* ===== 3D ICOSAHEDRON ===== */
+var icoCanvas=document.getElementById('icosahedron'),icoCtx=icoCanvas.getContext('2d');
+var W,H,icoRot=0;
+var phi=(1+Math.sqrt(5))/2;
+var icoVerts=[
+  [-1,phi,0],[1,phi,0],[-1,-phi,0],[1,-phi,0],
+  [0,-1,phi],[0,1,phi],[0,-1,-phi],[0,1,-phi],
+  [phi,0,-1],[phi,0,1],[-phi,0,-1],[-phi,0,1]
+];
+function norm(v){var l=Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]);return[v[0]/l,v[1]/l,v[2]/l]}
+icoVerts=icoVerts.map(norm);
+var icoEdges=[[0,1],[0,5],[0,7],[0,10],[0,11],[1,5],[1,7],[1,8],[1,9],[2,3],[2,6],[2,10],[2,11],[3,6],[3,8],[3,9],[4,5],[4,9],[4,11],[5,9],[6,7],[6,10],[7,8],[8,9],[10,11]];
+function resizeIco(){W=icoCanvas.clientWidth||window.innerWidth;H=icoCanvas.clientHeight||window.innerHeight;icoCanvas.width=W;icoCanvas.height=H}
+resizeIco();window.addEventListener('resize',resizeIco);
+function drawIco(){
+  icoRot+=.008;
+  var sinA=Math.sin(icoRot),cosA=Math.cos(icoRot),sinB=Math.sin(icoRot*.3),cosB=Math.cos(icoRot*.3);
+  var rot=function(v){var x=v[0],y=v[1],z=v[2];var x1=x*cosA+z*sinA,z1=-x*sinA+z*cosA;var y1=y*cosB-z1*sinB,z2=y*sinB+z1*cosB;return[x1,y1,z2]};
+  var size=Math.min(W,H)*.38,scale=function(p){return{x:W/2+p[0]*size*4.5/(4.5+p[2]),y:H/2-p[1]*size*4.5/(4.5+p[2]),z:p[2]}};
+  var proj=icoVerts.map(function(v){return scale(rot(v))});
+  icoCtx.clearRect(0,0,W,H);
+  icoCtx.strokeStyle='rgba(255,255,255,.6)';
+  icoCtx.lineWidth=1.5;
+  for(var i=0;i<icoEdges.length;i++){var a=proj[icoEdges[i][0]],b=proj[icoEdges[i][1]];icoCtx.beginPath();icoCtx.moveTo(a.x,a.y);icoCtx.lineTo(b.x,b.y);icoCtx.stroke()}
+  icoCtx.fillStyle='rgba(255,255,255,.03)';
+  for(var i=0;i<proj.length;i++){icoCtx.beginPath();icoCtx.arc(proj[i].x,proj[i].y,2,0,Math.PI*2);icoCtx.fill()}
+  requestAnimationFrame(drawIco);
+}
+drawIco();
+
+/* ===== MOUSE GLOW ===== */
+var mg=document.getElementById('mouseGlow');
+document.addEventListener('mousemove',function(e){mg.style.left=e.clientX+'px';mg.style.top=e.clientY+'px'});
+
+/* ===== 3D CARD TILT ===== */
+document.querySelectorAll('[data-tilt]').forEach(function(container){if(window.innerWidth<=768)return;container.querySelectorAll('.service-card,.portfolio-card,.team-card,.cs-card,.about-stat').forEach(function(card){card.addEventListener('mousemove',function(e){var r=card.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;card.style.transform='rotateY('+(x/r.width*8)+'deg) rotateX('+(-(y/r.height*8))+'deg) scale(1.02)'});card.addEventListener('mouseleave',function(){card.style.transform='rotateY(0deg) rotateX(0deg) scale(1)'})})});
+
+/* ===== NAV ===== */
 var nav=document.getElementById('nav');window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
-var hamburger=document.getElementById('hamburger');var navLinks=document.getElementById('navLinks');
+var hamburger=document.getElementById('hamburger'),navLinks=document.getElementById('navLinks');
 hamburger.addEventListener('click',function(){hamburger.classList.toggle('open');navLinks.classList.toggle('open');document.body.style.overflow=navLinks.classList.contains('open')?'hidden':''});
 navLinks.querySelectorAll('.nav__link, .nav__cta, .lang-btn').forEach(function(e){e.addEventListener('click',function(){hamburger.classList.remove('open');navLinks.classList.remove('open');document.body.style.overflow=''})});
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id==='#')return;var t=document.querySelector(id);if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+nav.offsetHeight+window.scrollY-nav.offsetHeight,behavior:'smooth'})}})});
+
+/* ===== REVEAL ===== */
 document.querySelectorAll('.section').forEach(function(s){s.querySelectorAll(':scope>.container>*').forEach(function(el,i){if(!el.classList.contains('section__header')&&!el.classList.contains('reveal')){el.classList.add('reveal');el.classList.add('reveal-delay-'+Math.min(i,4))}})});
-var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.reveal').forEach(function(e){revealObserver.observe(e)});
+var ro=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ro.unobserve(entry.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(function(e){ro.observe(e)});
+
+/* ===== FAQ ===== */
 document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-item__question').addEventListener('click',function(){var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(o){o.classList.remove('open')});if(!isOpen)item.classList.add('open')})});
-var carousel=document.getElementById('testimonialsCarousel');var dots=document.querySelectorAll('#testimonialsDots .dot');var slides=carousel.querySelectorAll('.testimonial-card');var currentSlide=0,autoplayInterval;
-function goToSlide(i){slides.forEach(function(s){s.classList.remove('active')});dots.forEach(function(d){d.classList.remove('active')});slides[i].classList.add('active');dots[i].classList.add('active');currentSlide=i}
-function nextSlide(){goToSlide((currentSlide+1)%slides.length)}
-dots.forEach(function(d){d.addEventListener('click',function(){goToSlide(parseInt(d.dataset.index));clearInterval(autoplayInterval);startAutoplay()})});
-function startAutoplay(){autoplayInterval=setInterval(nextSlide,5000)}
-startAutoplay();
-function animateCounter(el){var target=parseFloat(el.dataset.target),duration=2000,startTime=performance.now(),isDec=target%1!==0;function update(t){var p=Math.min((t-startTime)/duration,1),eased=1-Math.pow(1-p,3),cur=eased*target;el.textContent=isDec?cur.toFixed(1):Math.floor(cur);if(p<1)requestAnimationFrame(update);else el.textContent=isDec?target.toFixed(1):Math.floor(target)}requestAnimationFrame(update)}
-var counterObs=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){animateCounter(entry.target);counterObs.unobserve(entry.target)}})},{threshold:.5});
-document.querySelectorAll('.stat__number').forEach(function(el){counterObs.observe(el)});
-var contactForm=document.getElementById('contactForm');if(contactForm){var fields={name:{element:document.getElementById('name'),errorEl:document.querySelector('[data-for="name"]'),validate:function(v){if(!v.trim())return formMsgs.name.required;if(v.trim().length<2)return formMsgs.name.min;return''}},email:{element:document.getElementById('email'),errorEl:document.querySelector('[data-for="email"]'),validate:function(v){if(!v.trim())return formMsgs.email.required;if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()))return formMsgs.email.invalid;return''}},message:{element:document.getElementById('message'),errorEl:document.querySelector('[data-for="message"]'),validate:function(v){if(!v.trim())return formMsgs.message.required;if(v.trim().length<10)return formMsgs.message.min;return''}}};Object.keys(fields).forEach(function(k){var field=fields[k];field.element.addEventListener('blur',function(){var err=field.validate(field.element.value);field.errorEl.textContent=err;field.element.classList.toggle('error',!!err)});field.element.addEventListener('input',function(){if(field.element.classList.contains('error')){var err=field.validate(field.element.value);field.errorEl.textContent=err;field.element.classList.toggle('error',!!err)}})});contactForm.addEventListener('submit',function(e){e.preventDefault();var valid=true;Object.keys(fields).forEach(function(k){var f=fields[k],err=f.validate(f.element.value);f.errorEl.textContent=err;f.element.classList.toggle('error',!!err);if(err)valid=false});if(valid)e.target.submit()})}
-var hero=document.querySelector('.hero');if(hero&&window.innerWidth>768){hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;hero.querySelector('.hero__bg').style.transform='translate('+(x*20)+'px,'+(y*20)+'px) scale(1.1)'});hero.addEventListener('mouseleave',function(){hero.querySelector('.hero__bg').style.transform='scale(1)'})}
+
+/* ===== CAROUSEL ===== */
+var carousel=document.getElementById('testimonialsCarousel'),dots=document.querySelectorAll('#testimonialsDots .dot'),slides=carousel.querySelectorAll('.testimonial-card'),cs=0,ai;
+function gs(i){slides.forEach(function(s){s.classList.remove('active')});dots.forEach(function(d){d.classList.remove('active')});slides[i].classList.add('active');dots[i].classList.add('active');cs=i}
+function ns(){gs((cs+1)%slides.length)}
+dots.forEach(function(d){d.addEventListener('click',function(){gs(parseInt(d.dataset.index));clearInterval(ai);sa()})});
+function sa(){ai=setInterval(ns,5000)}
+sa();
+
+/* ===== COUNTERS ===== */
+function ac(el){var t=parseFloat(el.dataset.target),d=2000,st=performance.now(),id=t%1!==0;function u(ct){var p=Math.min((ct-st)/d,1),e=1-Math.pow(1-p,3),c=e*t;el.textContent=id?c.toFixed(1):Math.floor(c);if(p<1)requestAnimationFrame(u);else el.textContent=id?t.toFixed(1):Math.floor(t)}requestAnimationFrame(u)}
+var co=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){ac(entry.target);co.unobserve(entry.target)}})},{threshold:.5});
+document.querySelectorAll('.stat__number[data-target]').forEach(function(el){co.observe(el)});
+
+/* ===== FORM ===== */
+var cf=document.getElementById('contactForm');if(cf){var ff={name:{el:document.getElementById('name'),er:document.querySelector('[data-for="name"]'),v:function(v){if(!v.trim())return formMsgs.name.required;if(v.trim().length<2)return formMsgs.name.min;return''}},email:{el:document.getElementById('email'),er:document.querySelector('[data-for="email"]'),v:function(v){if(!v.trim())return formMsgs.email.required;if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()))return formMsgs.email.invalid;return''}},message:{el:document.getElementById('message'),er:document.querySelector('[data-for="message"]'),v:function(v){if(!v.trim())return formMsgs.message.required;if(v.trim().length<10)return formMsgs.message.min;return''}}};Object.keys(ff).forEach(function(k){var f=ff[k];f.el.addEventListener('blur',function(){var e=f.v(f.el.value);f.er.textContent=e;f.el.classList.toggle('error',!!e)});f.el.addEventListener('input',function(){if(f.el.classList.contains('error')){var e=f.v(f.el.value);f.er.textContent=e;f.el.classList.toggle('error',!!e)}})});cf.addEventListener('submit',function(e){e.preventDefault();var valid=true;Object.keys(ff).forEach(function(k){var f=ff[k],err=f.v(f.el.value);f.er.textContent=err;f.el.classList.toggle('error',!!err);if(err)valid=false});if(valid)e.target.submit()})}
+
+/* ===== BACK TO TOP ===== */
+var btt=document.getElementById('backToTop');
+window.addEventListener('scroll',function(){btt.classList.toggle('visible',window.scrollY>400)},{passive:true});
+btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
 </script>
 </body>
 </html>
