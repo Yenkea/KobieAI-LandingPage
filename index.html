@@ -8,12 +8,13 @@
 <title>KobieAI — AI Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
-:root{--bg:#000;--bg2:#070707;--bg3:#0f0f0f;--bg-card:rgba(255,255,255,0.02);--text:#fff;--text2:#aaa;--text3:#666;--accent:#fff;--accent-dim:rgba(255,255,255,0.1);--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.15);--gradient:linear-gradient(135deg,#fff,#888);--max-w:1200px;--nav-h:72px;--r:16px;--rs:10px;--t:.4s cubic-bezier(.4,0,.2,1);--ts:.6s cubic-bezier(.4,0,.2,1)}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+:root{--bg:#000;--bg2:#070707;--bg3:#0f0f0f;--bg-card:rgba(255,255,255,0.02);--text:#fff;--text2:#aaa;--text3:#999;--accent:#fff;--accent-dim:rgba(255,255,255,0.1);--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.15);--gradient:linear-gradient(135deg,#fff,#888);--max-w:1200px;--nav-h:72px;--r:16px;--rs:10px;--t:.4s cubic-bezier(.4,0,.2,1);--ts:.6s cubic-bezier(.4,0,.2,1)}
 .container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 24px}
 .gradient-text{background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .section{padding:120px 0;position:relative}
@@ -38,9 +39,9 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;o
 .scroll-progress{position:fixed;top:0;left:0;width:0;height:2px;background:var(--gradient);z-index:9999;transition:width .1s linear}
 
 /* ===== CUSTOM CURSOR ===== */
-.cursor{position:fixed;width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.4);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s,border-color .3s;mix-blend-mode:difference}
+.cursor{position:fixed;width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.4);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s,border-color .3s;mix-blend-mode:difference;will-change:transform}
 .cursor.hover{width:48px;height:48px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
-.cursor-dot{position:fixed;width:4px;height:4px;border-radius:50%;background:#fff;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s}
+.cursor-dot{position:fixed;width:4px;height:4px;border-radius:50%;background:#fff;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s;will-change:transform}
 
 /* ===== 3D ICOSAHEDRON CANVAS ===== */
 #icosahedron{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;display:block;opacity:.7}
@@ -186,6 +187,7 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;o
 .faq{background:var(--bg2)}
 .faq__list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
 .faq-item{overflow:hidden;transition:var(--t);border-radius:var(--rs);border:1px solid var(--border);background:var(--bg-card)}
+.faq-item h3{all:unset;display:block}
 .faq-item:hover{border-color:var(--accent-dim)}
 .faq-item__question{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;background:none;border:none;color:var(--text);font-family:inherit;font-size:.95rem;font-weight:600;cursor:pointer;text-align:left;transition:var(--t)}
 .faq-item__question:hover{color:var(--text2)}
@@ -330,7 +332,7 @@ body{cursor:auto}
 <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </div>
 </header>
-
+<main>
 <section class="hero" id="hero">
 <div class="hero-glow hero-glow--2"></div>
 <div class="hero-lines"></div>
@@ -533,11 +535,11 @@ body{cursor:auto}
 <div class="container">
 <div class="section__header"><span class="section__tag">FAQ</span><h2 class="section__title" data-i18n-html="faq-title">Frequently Asked <span class="gradient-text">Questions</span></h2><p class="section__desc" data-i18n="faq-desc">Everything you need to know about working with KobieAI.</p></div>
 <div class="faq__list">
-<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q1">How long does a typical project take?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a1">Most projects are delivered within 2-4 weeks, depending on complexity.</p></div></div>
-<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q2">What technologies do you use?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a2">We work with OpenAI, Anthropic Claude, Llama, LangChain, and more.</p></div></div>
-<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q3">Do you offer ongoing support?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a3">Yes! All plans include post-delivery support and maintenance packages.</p></div></div>
-<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q4">Can you work with our existing systems?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a4">Absolutely. We integrate with CRMs, databases, APIs, and legacy systems.</p></div></div>
-<div class="faq-item"><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q5">How do you handle data privacy?</span><span class="faq-item__arrow">↓</span></button><div class="faq-item__answer"><p data-i18n="faq-a5">End-to-end encryption, SOC 2 compliance, and strict data handling agreements.</p></div></div>
+<div class="faq-item"><h3><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q1">How long does a typical project take?</span><span class="faq-item__arrow">↓</span></button></h3><div class="faq-item__answer"><p data-i18n="faq-a1">Most projects are delivered within 2-4 weeks, depending on complexity.</p></div></div>
+<div class="faq-item"><h3><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q2">What technologies do you use?</span><span class="faq-item__arrow">↓</span></button></h3><div class="faq-item__answer"><p data-i18n="faq-a2">We work with OpenAI, Anthropic Claude, Llama, LangChain, and more.</p></div></div>
+<div class="faq-item"><h3><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q3">Do you offer ongoing support?</span><span class="faq-item__arrow">↓</span></button></h3><div class="faq-item__answer"><p data-i18n="faq-a3">Yes! All plans include post-delivery support and maintenance packages.</p></div></div>
+<div class="faq-item"><h3><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q4">Can you work with our existing systems?</span><span class="faq-item__arrow">↓</span></button></h3><div class="faq-item__answer"><p data-i18n="faq-a4">Absolutely. We integrate with CRMs, databases, APIs, and legacy systems.</p></div></div>
+<div class="faq-item"><h3><button class="faq-item__question" aria-expanded="false"><span data-i18n="faq-q5">How do you handle data privacy?</span><span class="faq-item__arrow">↓</span></button></h3><div class="faq-item__answer"><p data-i18n="faq-a5">End-to-end encryption, SOC 2 compliance, and strict data handling agreements.</p></div></div>
 </div>
 </div>
 </section>
@@ -562,6 +564,8 @@ body{cursor:auto}
 </div>
 </div>
 </section>
+
+</main>
 
 <footer class="footer">
 <div class="container footer__inner">
@@ -595,23 +599,23 @@ window.addEventListener('scroll',function(){var h=document.documentElement.scrol
 /* ===== CUSTOM CURSOR ===== */
 var cursor=document.getElementById('cursor'),cursorDot=document.getElementById('cursorDot');
 var cx=0,cy=0,dx=0,dy=0;
-document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;cursorDot.style.left=cx+'px';cursorDot.style.top=cy+'px'});
+document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;cursorDot.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)'});
 document.querySelectorAll('a,.btn,.dot,.faq-item__question,.nav__hamburger,.lang-btn').forEach(function(el){el.addEventListener('mouseenter',function(){cursor.classList.add('hover')});el.addEventListener('mouseleave',function(){cursor.classList.remove('hover')})});
-function cursorSmooth(){dx+=(cx-dx)*.12;dy+=(cy-dy)*.12;cursor.style.left=dx+'px';cursor.style.top=dy+'px';requestAnimationFrame(cursorSmooth)}
+function cursorSmooth(){dx+=(cx-dx)*.12;dy+=(cy-dy)*.12;cursor.style.transform='translate('+dx+'px,'+dy+'px) translate(-50%,-50%)';requestAnimationFrame(cursorSmooth)}
 cursorSmooth();
 
 /* ===== PARTICLES ===== */
 var canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
-var particles=[];
+var particles=[],pAnimId=null;
 function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
 resizeCanvas();window.addEventListener('resize',resizeCanvas);
-for(var i=0;i<80;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,s:Math.random()*1.2+.5,o:Math.random()*.25+.05})}
-function animateParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<particles.length;i++){var p=particles[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+p.o+')';ctx.fill();for(var j=i+1;j<particles.length;j++){var q=particles[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<100&&dist>0){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba(255,255,255,'+(.06*(1-dist/100))+')';ctx.stroke()}}}requestAnimationFrame(animateParticles)}
+for(var i=0;i<40;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,s:Math.random()*1.2+.5,o:Math.random()*.25+.05})}
+function animateParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<particles.length;i++){var p=particles[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+p.o+')';ctx.fill();for(var j=i+1;j<particles.length;j++){var q=particles[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<100&&dist>0){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba(255,255,255,'+(.06*(1-dist/100))+')';ctx.stroke()}}}pAnimId=requestAnimationFrame(animateParticles)}
 animateParticles();
 
 /* ===== 3D ICOSAHEDRON ===== */
 var icoCanvas=document.getElementById('icosahedron'),icoCtx=icoCanvas.getContext('2d');
-var W,H,icoRot=0;
+var W,H,icoRot=0,icoAnimId=null;
 var phi=(1+Math.sqrt(5))/2;
 var icoVerts=[
   [-1,phi,0],[1,phi,0],[-1,-phi,0],[1,-phi,0],
@@ -624,7 +628,7 @@ var icoEdges=[[0,1],[0,5],[0,7],[0,10],[0,11],[1,5],[1,7],[1,8],[1,9],[2,3],[2,6
 function resizeIco(){W=icoCanvas.clientWidth||window.innerWidth;H=icoCanvas.clientHeight||window.innerHeight;icoCanvas.width=W;icoCanvas.height=H}
 resizeIco();window.addEventListener('resize',resizeIco);
 function drawIco(){
-  icoRot+=.008;
+  icoRot+=.005;
   var sinA=Math.sin(icoRot),cosA=Math.cos(icoRot),sinB=Math.sin(icoRot*.3),cosB=Math.cos(icoRot*.3);
   var rot=function(v){var x=v[0],y=v[1],z=v[2];var x1=x*cosA+z*sinA,z1=-x*sinA+z*cosA;var y1=y*cosB-z1*sinB,z2=y*sinB+z1*cosB;return[x1,y1,z2]};
   var size=Math.min(W,H)*.38,scale=function(p){return{x:W/2+p[0]*size*4.5/(4.5+p[2]),y:H/2-p[1]*size*4.5/(4.5+p[2]),z:p[2]}};
@@ -635,9 +639,13 @@ function drawIco(){
   for(var i=0;i<icoEdges.length;i++){var a=proj[icoEdges[i][0]],b=proj[icoEdges[i][1]];icoCtx.beginPath();icoCtx.moveTo(a.x,a.y);icoCtx.lineTo(b.x,b.y);icoCtx.stroke()}
   icoCtx.fillStyle='rgba(255,255,255,.03)';
   for(var i=0;i<proj.length;i++){icoCtx.beginPath();icoCtx.arc(proj[i].x,proj[i].y,2,0,Math.PI*2);icoCtx.fill()}
-  requestAnimationFrame(drawIco);
+  icoAnimId=requestAnimationFrame(drawIco);
 }
 drawIco();
+
+/* ===== PAUSE ANIMATIONS WHEN OFF-SCREEN ===== */
+var animObserver=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){if(!pAnimId)animateParticles();if(!icoAnimId)drawIco()}else{if(pAnimId){cancelAnimationFrame(pAnimId);pAnimId=null}if(icoAnimId){cancelAnimationFrame(icoAnimId);icoAnimId=null}}})},{threshold:0});
+animObserver.observe(canvas);animObserver.observe(icoCanvas);
 
 /* ===== MOUSE GLOW ===== */
 var mg=document.getElementById('mouseGlow');

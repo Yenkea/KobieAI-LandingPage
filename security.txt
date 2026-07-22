@@ -1,0 +1,17 @@
+# Security Contact
+# If you've discovered a security vulnerability in KobieAI,
+# please report it via the contact method below.
+# We take all reports seriously and will respond promptly.
+
+Contact: mailto:jaku.kobierski@gmail.com
+Preferred-Languages: en, cs
+Canonical: https://yenkea.github.io/.well-known/security.txt
+Policy: https://yenkea.github.io/.well-known/security.txt
+Hiring: https://yenkea.github.io/#contact
+
+# The following encryption key is available for secure communication.
+# -----BEGIN PGP PUBLIC KEY BLOCK-----
+# (Add your PGP key here if desired)
+# -----END PGP PUBLIC KEY BLOCK-----
+
+# Expires: 2027-01-22T00:00:00.000Z
